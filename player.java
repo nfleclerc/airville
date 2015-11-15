@@ -6,6 +6,14 @@ public class Player {
 	private int numberOfRegularCounters;
 	private int numberOfAutoCounters;
 	private int numberOfSupervisors;
+	private static final Player instance = new Player();
+
+	private Player(){
+	}
+
+	public static Player getInstance(){
+		return this.instance();
+	}	
 
 	public void moveSupervisor(Supervisor supervisor){
 	}
@@ -13,5 +21,6 @@ public class Player {
 	public void addPoints(int points){
 		this.points += points;
 	}
+
 
 }
