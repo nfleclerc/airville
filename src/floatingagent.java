@@ -1,9 +1,12 @@
 public class FloatingAgent {
 
-	public void helpPassengerAt(Counter counter){
+	public static FloatingAgent callForAssistanceAt(Counter counter){
+		//moves a free agent to a counter
+		//returns the agent that is going to help
 	}
 
-	public void leaveCounter(Counter counter){
+	public void leaveCounter(){
+		//agent goes back to floating around
 	}
 
 }

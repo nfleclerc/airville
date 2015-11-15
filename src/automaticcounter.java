@@ -6,7 +6,8 @@ public class AutomaticCounter extends Counter {
 			if (passenger instanceof RegularPassenger){
 				processPassengersInGroups(passenger);
 			} else {
-				//passenger.queue(some other counter)
+				passengersInLine.remove(passenger);
+				passenger.queueAt(Counters.getRegularCounter);
 			}
 		}
 	}
@@ -18,7 +19,8 @@ public class AutomaticCounter extends Counter {
 			if (!checkGroupForSpecialPassengers(passenger.getGroup()){
 				processPassenger(passenger);
 			} else {
-				//passenger.getGroup().queue(some other counter)
+				passengersInLine.remove(passenger);
+				passenger.getGroup().queueAt(Counters.getRegularCounter);
 			}
 		}
 	}
@@ -37,7 +39,7 @@ public class AutomaticCounter extends Counter {
 			passenger.processAt(this);
 			passengersInLine.remove(passenger);
 		} else {
-			Agent agent = Agent.helpPassengerAt(this);
+			FloatingAgent agent = FloatingAgent.callForAssistanceAt(this);
 			passenger.processAt(this);
 			passengersInline.remove(passenger);
 			agent.leaveCounter();
