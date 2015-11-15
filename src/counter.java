@@ -2,11 +2,11 @@ public abstract class Counter {
 	
 	private Supervisor supervisor;
 	private int processSpeed;
-	private Queue<Passenger> passengersInLine;
+	private List<Passenger> passengersInLine;
 	
 	private abstract processPassengers();
 
-	private Queue<Passenger> getPassengersInLine(){
+	private List<Passenger> getPassengersInLine(){
 		return this.passengersInLine;
 	}
 	
