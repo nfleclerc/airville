@@ -18,4 +18,18 @@ public class AbstractPassenger implements Passenger{
 		counter.getPassengersInLine().add(this);
 	}
 
+	@Override
+	public void setGroup(PassengerGroup group){
+		this.group = group;
+	}
+
+	@Override
+	public void setInGroup(boolean inGroup){
+		this.inGroup = inGroup;
+	}
+
+	public boolean isInGroup(){
+		return this.inGroup;
+	}
+
 }

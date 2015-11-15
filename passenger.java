@@ -6,4 +6,8 @@ public interface Passenger {
 
 	boolean isFrequentFlyer();
 
+	void setGroup(PassengerGroup group);
+
+	void setInGroup(boolean inGroup);
+
 }
