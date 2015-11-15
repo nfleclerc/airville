@@ -10,4 +10,8 @@ public class Player {
 	public void moveSupervisor(Supervisor supervisor){
 	}
 
+	public void addPoints(int points){
+		this.points += points;
+	}
+
 }
