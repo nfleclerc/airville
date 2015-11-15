@@ -1,4 +1,4 @@
-class FloatingAgent {
+public class FloatingAgent {
 
 	public void helpPassengerAt(Counter counter){
 	}

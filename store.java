@@ -1,4 +1,4 @@
-class Store {
+public class Store {
 
     //private constructor
 
