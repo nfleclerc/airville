@@ -4,9 +4,11 @@ public class OverbookedPassenger extends AbstractPassenger {
 	
 	@Override
 	public void processAt(Counter counter){
-		counter.setProcessSpeed(counter.getProcessSpeed / OVERBOOKED_SPEED);
+		counter.setProcessSpeed(counter.getProcessSpeed() / OVERBOOKED_SPEED);
 		Player.getInstance().addPoints(OVERBOOKED_POINTS);
-		counter.setProcessSpeed(counter.getProcessSpeed * OVERBOOKED_SPEED);
+		counter.setProcessSpeed(counter.getProcessSpeed() * OVERBOOKED_SPEED);
 	}
+
+	//thi is a tset
 
 }

@@ -10,4 +10,6 @@ public class Supervisor {
 		counter.setProcessSpeed(counter.getProcessSpeed() / SUPERVISOR_BONUS);
 	}
 
+	//this is a test
+
 }
