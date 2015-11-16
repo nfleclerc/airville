@@ -1,16 +1,16 @@
-public class AbstractPassenger implements Passenger{
+public abstract class AbstractPassenger implements Passenger{
 
 	private PassengerGroup group;
-	private boolean freqFlyer;
+	private boolean frequentFlyer;
 	private boolean inGroup;
-	private static final int REGULAR_POINTS = 1;
-	private static final int REROUTED_POINTS = 15;
-	private static final int EXTRABAGGAGE_POINTS = 5;
-	private static final int OVERBOOKED_POINTS = 10;
+	protected static final int REGULAR_POINTS = 1;
+	protected static final int REROUTED_POINTS = 15;
+	protected static final int EXTRABAGGAGE_POINTS = 5;
+	protected static final int OVERBOOKED_POINTS = 10;
 
 
-	public static Passenger make (PassengerType passengerType){
-		passengerType.getConstructor().get();
+	public static Passenger make(PassengerType passengerType){
+		return (Passenger) passengerType.getConstructor().get();
 	}
 
 	@Override
@@ -28,8 +28,19 @@ public class AbstractPassenger implements Passenger{
 		this.inGroup = inGroup;
 	}
 
+	@Override
 	public boolean isInGroup(){
 		return this.inGroup;
+	}
+
+	@Override
+	public PassengerGroup getGroup(){
+		return this.group;
+	}
+
+	@Override
+	public boolean isFrequentFlyer(){
+		return this.frequentFlyer;
 	}
 
 }

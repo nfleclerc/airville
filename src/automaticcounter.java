@@ -2,12 +2,12 @@ public class AutomaticCounter extends Counter {
 
 	@Override
 	public void processPassengers() {
-		for (Passenger passenger : passengersInLine){
+		for (Passenger passenger : getPassengersInLine()){
 			if (passenger instanceof RegularPassenger){
 				processPassengersInGroups(passenger);
 			} else {
-				passengersInLine.remove(passenger);
-				passenger.queueAt(Counters.getRegularCounter);
+				getPassengersInLine().remove(passenger);
+				passenger.queueAt(Counters.getRegularCounter());
 			}
 		}
 	}
@@ -16,18 +16,18 @@ public class AutomaticCounter extends Counter {
 		if (!passenger.isInGroup()){
 			processPassenger(passenger);
 		} else {
-			if (!checkGroupForSpecialPassengers(passenger.getGroup()){
+			if (!checkGroupForSpecialPassengers(passenger.getGroup())){
 				processPassenger(passenger);
 			} else {
-				passengersInLine.remove(passenger);
-				passenger.getGroup().queueAt(Counters.getRegularCounter);
+				getPassengersInLine().remove(passenger);
+				passenger.getGroup().queueAt(Counters.getRegularCounter());
 			}
 		}
 	}
 
-	private void checkGroupForSpecialPassengers(PassengerGroup group){
-		for (Passsenger passenger : goup.getPassengers()){
-			if (!passenger instanceof RegularPassenger){
+	private boolean checkGroupForSpecialPassengers(PassengerGroup group){
+		for (Passenger passenger : group.getPassengers()){
+			if ((passenger instanceof RegularPassenger)){
 				return true;
 			}
 		}
@@ -37,11 +37,11 @@ public class AutomaticCounter extends Counter {
 	private void processPassenger(Passenger passenger){
 		if (Math.random() > 0.5){
 			passenger.processAt(this);
-			passengersInLine.remove(passenger);
+			getPassengersInLine().remove(passenger);
 		} else {
 			FloatingAgent agent = FloatingAgent.callForAssistanceAt(this);
 			passenger.processAt(this);
-			passengersInline.remove(passenger);
+			getPassengersInLine().remove(passenger);
 			agent.leaveCounter();
 		}
 	}

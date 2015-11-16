@@ -1,6 +1,6 @@
 public class ExtraBaggagePassenger extends AbstractPassenger {
 
-	private static int final EXTRABAGGAGE_SPEED = 4;
+	private static final int EXTRABAGGAGE_SPEED = 4;
 
 	@Override
 	public void processAt(Counter counter){

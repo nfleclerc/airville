@@ -6,17 +6,17 @@ public class RegularCounter extends Counter {
 	public void processPassengers() {
 		// move all freqflyers to the front
 		moveFrequentFlyers();
-		for (Passenger passenger : passengersInLine){
+		for (Passenger passenger : getPassengersInLine()){
 			passenger.processAt(this);
-			passengersInlIne.remove(passenger);
+			getPassengersInLine().remove(passenger);
 		}
 	}
 
 	private void moveFrequentFlyers(){
-		for (Passenger passenger : passengersInLine){
+		for (Passenger passenger : getPassengersInLine()){
 			if (passenger.isFrequentFlyer()){
-				passengersInLine.remove(passenger);
-				passengersInLine.add(FRONT_INDEX, passenger);
+				getPassengersInLine().remove(passenger);
+				getPassengersInLine().add(FRONT_INDEX, passenger);
 			}
 		}
 	}

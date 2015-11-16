@@ -10,4 +10,8 @@ public interface Passenger {
 
 	void setInGroup(boolean inGroup);
 
+	boolean isInGroup();
+
+	PassengerGroup getGroup();
+
 }

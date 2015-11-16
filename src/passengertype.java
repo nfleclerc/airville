@@ -1,8 +1,10 @@
+import java.util.function.Supplier;
+
 public enum PassengerType {
 
-	REGULAR(RegularPassenger::new);
-	REROUTED(ReroutedPassenger::new);
-	EXTRABAGGAGE(ExtraBaggagePassenger::new);
+	REGULAR(RegularPassenger::new),
+	REROUTED(ReroutedPassenger::new),
+	EXTRABAGGAGE(ExtraBaggagePassenger::new),
 	OVERBOOKED(OverbookedPassenger::new);
 
 	private Supplier constructor;

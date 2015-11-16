@@ -12,7 +12,7 @@ public class Player {
 	}
 
 	public static Player getInstance(){
-		return this.instance();
+		return instance;
 	}	
 
 	public void moveSupervisor(Supervisor supervisor){

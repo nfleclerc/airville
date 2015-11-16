@@ -1,18 +1,20 @@
+import java.util.List;
+
 public class Counters {
 	
-	List<RegularCounters> regularCounters;
-	List<AutomaticCounters> automaticCounters;
+	static List<RegularCounter> regularCounters;
+	static List<AutomaticCounter> automaticCounters;
 
-	public void addCounter(Counter counter){
+	public static void addCounter(Counter counter){
 		if (counter instanceof RegularCounter){
-			regularCounters.add(counter);
+			regularCounters.add((RegularCounter)counter);
 		} else {
-			automaticCounters.add(counter);
+			automaticCounters.add((AutomaticCounter)counter);
 		}
 	}
 
 	public static RegularCounter getRegularCounter(){
-		return (regularCounters.get(Math.random * regularCounters.size));
+		return (regularCounters.get((int) (Math.random() * regularCounters.size())));
 	}
 
 }

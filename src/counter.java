@@ -1,12 +1,14 @@
+import java.util.List;
+
 public abstract class Counter {
 	
 	private Supervisor supervisor;
 	private int processSpeed;
 	private List<Passenger> passengersInLine;
 	
-	private abstract processPassengers();
+	public abstract void processPassengers();
 
-	private List<Passenger> getPassengersInLine(){
+	public List<Passenger> getPassengersInLine(){
 		return this.passengersInLine;
 	}
 	
@@ -20,5 +22,9 @@ public abstract class Counter {
 
 	public void setProcessSpeed(int processSpeed){
 		this.processSpeed = processSpeed;
+	}
+
+	public boolean hasSupervisor() {
+		return false;
 	}
 }
