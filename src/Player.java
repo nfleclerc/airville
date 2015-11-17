@@ -42,8 +42,27 @@ public class Player {
 		this.points -= points;
 	}
 
-
 	public void removeDiamonds(int diamonds) {
 		this.diamonds -= diamonds;
+	}
+
+	public void addRegularCounter(){
+		this.numberOfRegularCounters++;
+	}
+
+	public void addAutomaticCounter(){
+		this.numberOfAutoCounters++;
+	}
+
+	public void addAgent(){
+		this.numberOfAgents++;
+	}
+
+	public void addSupervisor(){
+		this.numberOfSupervisors++;
+	}
+
+	public void addDiamond(){
+		this.diamonds++;
 	}
 }

@@ -13,6 +13,4 @@ public class OverbookedPassenger extends AbstractPassenger {
 		counter.setProcessSpeed(counter.getProcessSpeed() * OVERBOOKED_SPEED);
 	}
 
-	//thi is a tset
-
 }
