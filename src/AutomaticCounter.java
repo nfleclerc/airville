@@ -7,7 +7,7 @@ public class AutomaticCounter extends Counter {
 				processPassengersInGroups(passenger);
 			} else {
 				getPassengersInLine().remove(passenger);
-				passenger.queueAt(Counters.getRegularCounter());
+				passenger.queueAt(GamePieces.getRegularCounter());
 			}
 		}
 	}
@@ -20,7 +20,7 @@ public class AutomaticCounter extends Counter {
 				processPassenger(passenger);
 			} else {
 				getPassengersInLine().remove(passenger);
-				passenger.getGroup().queueAt(Counters.getRegularCounter());
+				passenger.getGroup().queueAt(GamePieces.getRegularCounter());
 			}
 		}
 	}

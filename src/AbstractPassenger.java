@@ -9,8 +9,12 @@ public abstract class AbstractPassenger implements Passenger{
 	protected static final int OVERBOOKED_POINTS = 10;
 
 
-	public static Passenger make(PassengerType passengerType){
-		return (Passenger) passengerType.getConstructor().get();
+	public static Passenger make(PassengerType passengerType, boolean frequentFlyer){
+		return (Passenger) passengerType.getConstructor();
+	}
+
+	AbstractPassenger(boolean frequentFlyer){
+		this.frequentFlyer = frequentFlyer;
 	}
 
 	@Override

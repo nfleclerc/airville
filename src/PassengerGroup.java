@@ -6,8 +6,8 @@ public class PassengerGroup {
 
 	public PassengerGroup(List<Passenger> passengers){
 		this.passengers = passengers;
-		passengers.stream().forEach(passenger -> passenger.setInGroup(true));
 		passengers.stream().forEach(passenger -> passenger.setGroup(this));
+		passengers.stream().forEach(passenger -> passenger.setInGroup(true));
 	}
 
 	public void queueAt(Counter counter){

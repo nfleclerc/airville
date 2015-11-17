@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Counters {
+public class GamePieces {
 	
 	static List<RegularCounter> regularCounters;
 	static List<AutomaticCounter> automaticCounters;

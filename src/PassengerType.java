@@ -1,4 +1,5 @@
-import java.util.function.Supplier;
+
+import java.util.function.Function;
 
 public enum PassengerType {
 
@@ -7,13 +8,13 @@ public enum PassengerType {
 	EXTRABAGGAGE(ExtraBaggagePassenger::new),
 	OVERBOOKED(OverbookedPassenger::new);
 
-	private Supplier constructor;
+	private Function<Boolean, Passenger> constructor;
 
-	private PassengerType(Supplier constructor){
+	PassengerType(Function<Boolean, Passenger> constructor){
 		this.constructor = constructor;
 	}
 
-	public Supplier getConstructor(){
+	public Function getConstructor(){
 		return this.constructor;
 	}
 

@@ -1,5 +1,9 @@
 public class ReroutedPassenger extends AbstractPassenger {
 
+	ReroutedPassenger(boolean frequentFlyer){
+		super(frequentFlyer);
+	}
+
 	@Override
 	public void processAt(Counter counter){
 		if (counter.hasSupervisor()){
