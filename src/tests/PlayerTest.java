@@ -20,11 +20,6 @@ public class PlayerTest {
     }
 
     @Test
-    public void testMoveSupervisor() throws Exception {
-
-    }
-
-    @Test
     public void testAddPoints() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
         Player.getInstance().addPoints(17);
@@ -89,5 +84,10 @@ public class PlayerTest {
         Player.getInstance().resetCurrencies();
         assertTrue(0 == Player.getInstance().getPoints());
         assertTrue(0 == Player.getInstance().getDiamonds());
+    }
+
+    @Test
+    public void testMoveSupervisor() throws Exception {
+
     }
 }

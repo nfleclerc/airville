@@ -20,7 +20,7 @@ public class PassengerGroupTest {
             passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
         }
         PassengerGroup group = new PassengerGroup(passengerList);
-        RegularCounter counter = new RegularCounter();
+        AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
         //testing if all passengers are queued at the same counter
         assertEquals(4, counter.getPassengersInLine().size());

@@ -66,7 +66,7 @@ public class AutomaticCounter extends Counter {
 		//check each passenger in a group
 		//if any of them are not regular, return true
 		for (Passenger passenger : group.getPassengers()){
-			if ((passenger instanceof RegularPassenger)){
+			if (!(passenger instanceof RegularPassenger)){
 				return true;
 			}
 		}

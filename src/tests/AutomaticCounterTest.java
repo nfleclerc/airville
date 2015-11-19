@@ -57,13 +57,14 @@ public class AutomaticCounterTest {
         //Structured Branch:
         //test in which passengers are in a group
         int currentPoints = Player.getInstance().getPoints();
-        AutomaticCounter counter = new AutomaticCounter();
         GamePieces.addCounter(new RegularCounter());
-        List<Passenger> listOfPassengers = new LinkedList<>();
+        GamePieces.addFloatingAgent(new FloatingAgent());
+        List<Passenger> passengerList = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            listOfPassengers.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+            passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
         }
-        PassengerGroup group = new PassengerGroup(listOfPassengers);
+        PassengerGroup group = new PassengerGroup(passengerList);
+        AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
         assertEquals(3, counter.getPassengersInLine().size());
         counter.processPassengers();
