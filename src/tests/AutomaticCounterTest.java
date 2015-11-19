@@ -3,6 +3,9 @@ package tests;
 import airville.*;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -11,18 +14,63 @@ import static org.junit.Assert.*;
 public class AutomaticCounterTest {
 
     @Test
-    public void testProcessPassengers() throws Exception {
+    public void testProcessRegularPassengers() throws Exception {
+
+        //Structured Branch:
+        //test in which all passengers are Regular and are not in a group
         int currentPoints = Player.getInstance().getPoints();
         GamePieces.addFloatingAgent(new FloatingAgent());
         AutomaticCounter counter = new AutomaticCounter();
         for (int i = 0; i < 5; i++) {
             AbstractPassenger.make(PassengerType.REGULAR, false).queueAt(counter);
         }
-
         assertEquals(5, counter.getPassengersInLine().size());
         counter.processPassengers();
         assertEquals(0, counter.getPassengersInLine().size());
         assertEquals(currentPoints + RegularPassenger.getPointValue() * 5,
+                Player.getInstance().getPoints());
+
+    }
+
+    @Test
+    public void testProcessNonRegularPassengers() throws Exception {
+        //Structured Branch:
+        //test in which passengers are not Regular and not in group
+        int currentPoints = Player.getInstance().getPoints();
+        GamePieces.addCounter(new RegularCounter());
+        AutomaticCounter counter = new AutomaticCounter();
+        for (int i = 0; i < 3; i++) {
+            AbstractPassenger.make(PassengerType.EXTRABAGGAGE, false).queueAt(counter);
+        }
+        assertEquals(3, counter.getPassengersInLine().size());
+        counter.processPassengers();
+        assertEquals(0, counter.getPassengersInLine().size());
+        //no points should be added since they should have all been queued at another counter
+        //instead of being processed
+        assertEquals(currentPoints,
+                Player.getInstance().getPoints());
+
+    }
+
+    @Test
+    public void testProcessPassengersInGroups(){
+        //Structured Branch:
+        //test in which passengers are in a group
+        int currentPoints = Player.getInstance().getPoints();
+        AutomaticCounter counter = new AutomaticCounter();
+        GamePieces.addCounter(new RegularCounter());
+        List<Passenger> listOfPassengers = new LinkedList<>();
+        for (int i = 0; i < 3; i++) {
+            listOfPassengers.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+        }
+        PassengerGroup group = new PassengerGroup(listOfPassengers);
+        group.queueAt(counter);
+        assertEquals(3, counter.getPassengersInLine().size());
+        counter.processPassengers();
+        assertEquals(0, counter.getPassengersInLine().size());
+        //these passengers should all be processed normally so points
+        //should be awarded
+        assertEquals(currentPoints + RegularPassenger.getPointValue() * 3,
                 Player.getInstance().getPoints());
 
     }
