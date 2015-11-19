@@ -8,7 +8,7 @@ public class Store {
     private static final int REGCOUNTER_COST = 100;
 
     //pieces that cost diamonds
-    private static final int SUPERVISOR_COST = 20;
+    private static final int SUPERVISOR_COST = 1;
 
     public enum CurrencyType {
         DIAMONDS, POINTS

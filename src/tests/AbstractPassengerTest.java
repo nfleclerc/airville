@@ -22,6 +22,6 @@ public class AbstractPassengerTest {
         RegularPassenger passenger = (RegularPassenger) AbstractPassenger.make(PassengerType.REGULAR, true);
         Counter counter = new AutomaticCounter();
         passenger.queueAt(counter);
-        assertEquals(counter.getPassengersInLine().get(1), passenger);
+        assertEquals(counter.getPassengersInLine().get(0), passenger);
     }
 }

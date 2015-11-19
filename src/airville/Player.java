@@ -105,4 +105,9 @@ public class Player {
 	public int getNumberOfSupervisors() {
 		return numberOfSupervisors;
 	}
+
+	public void resetCurrencies(){
+		points = 0;
+		diamonds = 0;
+	}
 }

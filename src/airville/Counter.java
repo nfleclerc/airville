@@ -7,7 +7,7 @@ public abstract class Counter {
 	
 	private Supervisor supervisor;
 	private boolean hasSupervisor;
-	private int processSpeed;
+	private double processSpeed;
 	private List<Passenger> passengersInLine;
 	
 	public abstract void processPassengers();
@@ -27,11 +27,11 @@ public abstract class Counter {
 		this.supervisor = supervisor;
 	}
 
-	public int getProcessSpeed(){
+	public double getProcessSpeed(){
 		return this.processSpeed;
 	}
 
-	public void setProcessSpeed(int processSpeed){
+	public void setProcessSpeed(double processSpeed){
 		this.processSpeed = processSpeed;
 	}
 
