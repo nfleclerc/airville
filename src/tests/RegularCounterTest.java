@@ -1,5 +1,6 @@
 package tests;
 
+import airville.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,6 +12,23 @@ public class RegularCounterTest {
 
     @Test
     public void testProcessPassengers() throws Exception {
+
+        int currentPoints = Player.getInstance().getPoints();
+
+        RegularCounter counter = new RegularCounter();
+
+        for (int i = 0; i < 5; i++) {
+            AbstractPassenger.make(PassengerType.REGULAR, false).queueAt(counter);
+        }
+
+        assertEquals(counter.getPassengersInLine().size(), 5);
+
+        counter.processPassengers();
+
+        assertEquals(counter.getPassengersInLine().size(), 0);
+
+        assertEquals(currentPoints + RegularPassenger.getPointValue() * 5,
+                Player.getInstance().getPoints());
 
     }
 }
