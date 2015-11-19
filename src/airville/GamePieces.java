@@ -47,4 +47,11 @@ public class GamePieces {
 	public static List<Supervisor> getSupervisors() {
 		return supervisors;
 	}
+
+	public static void clearLists(){
+		regularCounters = new ArrayList<>();
+		automaticCounters = new ArrayList<>();
+		floatingAgents = new ArrayList<>();
+		supervisors = new ArrayList<>();
+	}
 }
