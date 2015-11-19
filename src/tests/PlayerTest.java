@@ -83,4 +83,11 @@ public class PlayerTest {
         Player.getInstance().addDiamond();
         assertTrue(currentDiamonds + 1 == Player.getInstance().getDiamonds());
     }
+
+    @Test
+    public void testResetCurrencies(){
+        Player.getInstance().resetCurrencies();
+        assertTrue(0 == Player.getInstance().getPoints());
+        assertTrue(0 == Player.getInstance().getDiamonds());
+    }
 }
