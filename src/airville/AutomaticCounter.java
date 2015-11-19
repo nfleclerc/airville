@@ -5,6 +5,7 @@ public class AutomaticCounter extends Counter {
 	private FloatingAgent agent;
 
 	public AutomaticCounter(){
+		super();
 		agent = null;
 	}
 

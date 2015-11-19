@@ -4,6 +4,10 @@ public class RegularCounter extends Counter {
 
 	public static final int FRONT_INDEX = 0;
 
+	public RegularCounter(){
+		super();
+	}
+
 	@Override
 	public void processPassengers() {
 		// move all freqflyers to the front
