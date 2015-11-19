@@ -33,11 +33,16 @@ public class Player {
 
 	public void moveSupervisor(Supervisor supervisor, Counter counter){
 
-		supervisor.getCurrentCounter().setSupervisor(null);
+		//removes the speed buff from the counter that the supervisor is leaving
 		supervisor.slowDown(supervisor.getCurrentCounter());
+		//removes the supervisor from the counter he/she is currently at
+		supervisor.getCurrentCounter().setSupervisor(null);
 
+		//sets supervisor to be at the counter
 		counter.setSupervisor(supervisor);
+		//applies the supervisor speed buff to the new counter
 		supervisor.speedUp(counter);
+		//passes a reference of the new counter to the supervisor
 		supervisor.setCurrentCounter(counter);
 	}
 

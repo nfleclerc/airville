@@ -8,6 +8,7 @@ public class OverbookedPassenger extends AbstractPassenger {
 
 	@Override
 	public void processAt(Counter counter){
+		//processes this passenger at a slower speed than normal
 		counter.setProcessSpeed(counter.getProcessSpeed() / OVERBOOKED_SPEED);
 		Player.getInstance().addPoints(OVERBOOKED_POINTS);
 		counter.setProcessSpeed(counter.getProcessSpeed() * OVERBOOKED_SPEED);

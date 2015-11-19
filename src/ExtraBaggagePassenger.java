@@ -8,6 +8,7 @@ public class ExtraBaggagePassenger extends AbstractPassenger {
 
 	@Override
 	public void processAt(Counter counter){
+		//alters the speed so this passenger is processed slower
 		counter.setProcessSpeed(counter.getProcessSpeed() / EXTRABAGGAGE_SPEED);
 		Player.getInstance().addPoints(EXTRABAGGAGE_POINTS);
 		counter.setProcessSpeed(counter.getProcessSpeed() * EXTRABAGGAGE_SPEED);

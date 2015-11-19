@@ -10,6 +10,7 @@ public class PassengerGroup {
 		passengers.stream().forEach(passenger -> passenger.setInGroup(true));
 	}
 
+	//queues the whole group at the same counter
 	public void queueAt(Counter counter){
 		passengers.stream().forEach(passenger -> passenger.queueAt(counter));
 	}

@@ -2,12 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GamePieces {
-	
+
+	//holds all the characters and counters in the game
 	private static List<RegularCounter> regularCounters = new ArrayList<>();
 	private static List<AutomaticCounter> automaticCounters = new ArrayList<>();
 	private static List<FloatingAgent> floatingAgents = new ArrayList<>();
 	private static List<Supervisor> supervisors = new ArrayList<>();
 
+	//adds a new counter to the set of counters rendered in the game
 	public static void addCounter(Counter counter){
 		if (counter instanceof RegularCounter){
 			regularCounters.add((RegularCounter)counter);

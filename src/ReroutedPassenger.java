@@ -7,8 +7,11 @@ public class ReroutedPassenger extends AbstractPassenger {
 	@Override
 	public void processAt(Counter counter){
 		if (counter.hasSupervisor()){
+			//if the counter has a supervisor the passenger
+			//can be processed as normal
 			addPointsToPlayer();
 		} else {
+			//if there is no supervisor
 			while (!counter.hasSupervisor()){
 				//do absolutely nothing
 				//just keep stalling until the supervisor is at the counter
