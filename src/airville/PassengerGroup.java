@@ -1,3 +1,5 @@
+package airville;
+
 import java.util.List;
 
 public class PassengerGroup {

@@ -1,6 +1,9 @@
+package airville;
+
 public class ExtraBaggagePassenger extends AbstractPassenger {
 
 	private static final int EXTRABAGGAGE_SPEED = 4;
+	private static final int EXTRABAGGAGE_POINTS = 5;
 
 	ExtraBaggagePassenger(boolean frequentFlyer){
 		super(frequentFlyer);
@@ -14,4 +17,7 @@ public class ExtraBaggagePassenger extends AbstractPassenger {
 		counter.setProcessSpeed(counter.getProcessSpeed() * EXTRABAGGAGE_SPEED);
 	}
 
+	public static int getPointValue() {
+		return EXTRABAGGAGE_POINTS;
+	}
 }

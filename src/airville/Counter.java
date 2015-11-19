@@ -1,8 +1,11 @@
+package airville;
+
 import java.util.List;
 
 public abstract class Counter {
 	
 	private Supervisor supervisor;
+	private boolean hasSupervisor;
 	private int processSpeed;
 	private List<Passenger> passengersInLine;
 	
@@ -25,6 +28,10 @@ public abstract class Counter {
 	}
 
 	public boolean hasSupervisor() {
-		return false;
+		return hasSupervisor;
+	}
+
+	public void setHasSupervisor(boolean hasSupervisor) {
+		this.hasSupervisor = hasSupervisor;
 	}
 }

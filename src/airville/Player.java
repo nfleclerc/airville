@@ -1,3 +1,5 @@
+package airville;
+
 public class Player {
 
 	private static final int STARTING_AGENT_COUNT = 2;
@@ -37,6 +39,7 @@ public class Player {
 		supervisor.slowDown(supervisor.getCurrentCounter());
 		//removes the supervisor from the counter he/she is currently at
 		supervisor.getCurrentCounter().setSupervisor(null);
+		supervisor.getCurrentCounter().setHasSupervisor(false);
 
 		//sets supervisor to be at the counter
 		counter.setSupervisor(supervisor);
@@ -44,6 +47,7 @@ public class Player {
 		supervisor.speedUp(counter);
 		//passes a reference of the new counter to the supervisor
 		supervisor.setCurrentCounter(counter);
+		counter.setHasSupervisor(true);
 	}
 
 	public void addPoints(int points){
@@ -76,5 +80,29 @@ public class Player {
 
 	public void addDiamond(){
 		this.diamonds++;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public int getDiamonds() {
+		return diamonds;
+	}
+
+	public int getNumberOfAgents() {
+		return numberOfAgents;
+	}
+
+	public int getNumberOfRegularCounters() {
+		return numberOfRegularCounters;
+	}
+
+	public int getNumberOfAutoCounters() {
+		return numberOfAutoCounters;
+	}
+
+	public int getNumberOfSupervisors() {
+		return numberOfSupervisors;
 	}
 }

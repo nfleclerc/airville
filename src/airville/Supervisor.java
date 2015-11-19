@@ -1,3 +1,5 @@
+package airville;
+
 public class Supervisor {
 
 	public static final int SUPERVISOR_BONUS = 2;

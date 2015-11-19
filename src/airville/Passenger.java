@@ -1,3 +1,5 @@
+package airville;
+
 public interface Passenger {
 
 	void processAt(Counter counter);
@@ -13,4 +15,5 @@ public interface Passenger {
 	void setInGroup(boolean inGroup);
 
 	void setGroup(PassengerGroup group);
+
 }

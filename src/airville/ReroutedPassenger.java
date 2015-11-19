@@ -1,4 +1,8 @@
+package airville;
+
 public class ReroutedPassenger extends AbstractPassenger {
+
+	private static final int REROUTED_POINTS = 15;
 
 	ReroutedPassenger(boolean frequentFlyer){
 		super(frequentFlyer);
@@ -25,4 +29,7 @@ public class ReroutedPassenger extends AbstractPassenger {
 		Player.getInstance().addPoints(REROUTED_POINTS);
 	}
 
+	public static int getPointValue() {
+		return REROUTED_POINTS;
+	}
 }

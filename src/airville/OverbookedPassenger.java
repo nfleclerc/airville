@@ -1,6 +1,9 @@
+package airville;
+
 public class OverbookedPassenger extends AbstractPassenger {
 
-	public static final int OVERBOOKED_SPEED = 2;
+	private static final int OVERBOOKED_SPEED = 2;
+	private static final int OVERBOOKED_POINTS = 10;
 
 	OverbookedPassenger(boolean frequentFlyer){
 		super(frequentFlyer);
@@ -14,4 +17,7 @@ public class OverbookedPassenger extends AbstractPassenger {
 		counter.setProcessSpeed(counter.getProcessSpeed() * OVERBOOKED_SPEED);
 	}
 
+	public static int getPointValue() {
+		return OVERBOOKED_POINTS;
+	}
 }

@@ -1,3 +1,5 @@
+package airville;
+
 public class Store {
 
     //pieces that cost points

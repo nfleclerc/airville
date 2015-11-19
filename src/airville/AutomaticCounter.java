@@ -1,3 +1,5 @@
+package airville;
+
 public class AutomaticCounter extends Counter {
 
 	private FloatingAgent agent;
