@@ -1,6 +1,8 @@
 package tests;
 
 import airville.Player;
+import airville.RegularCounter;
+import airville.Supervisor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -88,6 +90,7 @@ public class PlayerTest {
 
     @Test
     public void testMoveSupervisor() throws Exception {
-
+        Supervisor supervisor = new Supervisor();
+        RegularCounter counter = new RegularCounter();
     }
 }

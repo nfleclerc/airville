@@ -55,7 +55,36 @@ public class AutomaticCounterTest {
     @Test
     public void testProcessPassengersInGroups(){
         //Structured Branch:
-        //test in which passengers are in a group
+        //test in which passengers are in a group but they
+        //are all regular
+        int currentPoints = Player.getInstance().getPoints();
+        GamePieces.addCounter(new RegularCounter());
+        GamePieces.addFloatingAgent(new FloatingAgent());
+        List<Passenger> passengerList = new LinkedList<>();
+
+        //set up the passenger group
+        for (int i = 0; i < 3; i++) {
+            passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+        }
+        PassengerGroup group = new PassengerGroup(passengerList);
+        AutomaticCounter counter = new AutomaticCounter();
+        group.queueAt(counter);
+
+        assertEquals(3, counter.getPassengersInLine().size());
+        counter.processPassengers();
+        assertEquals(0, counter.getPassengersInLine().size());
+        //these passengers should all be processed normally so points
+        //should be awarded
+        assertEquals(currentPoints + RegularPassenger.getPointValue() * 3,
+                Player.getInstance().getPoints());
+
+    }
+
+    @Test
+    public void testProcessPassengersInGroupsWithASpecialPassenger(){
+        //Structured Branch:
+        //test in which passengers are in a group but one
+        //member is not regular
         int currentPoints = Player.getInstance().getPoints();
         GamePieces.addCounter(new RegularCounter());
         GamePieces.addFloatingAgent(new FloatingAgent());
@@ -63,15 +92,18 @@ public class AutomaticCounterTest {
         for (int i = 0; i < 3; i++) {
             passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
         }
+        //add the non regular passenger to the list
+        passengerList.add(AbstractPassenger.make(PassengerType.EXTRABAGGAGE, false));
         PassengerGroup group = new PassengerGroup(passengerList);
         AutomaticCounter counter = new AutomaticCounter();
+
         group.queueAt(counter);
-        assertEquals(3, counter.getPassengersInLine().size());
+        assertEquals(4, counter.getPassengersInLine().size());
         counter.processPassengers();
         assertEquals(0, counter.getPassengersInLine().size());
-        //these passengers should all be processed normally so points
-        //should be awarded
-        assertEquals(currentPoints + RegularPassenger.getPointValue() * 3,
+        //these passengers should all be requeued at another line so no
+        //points should be awarded yet
+        assertEquals(currentPoints,
                 Player.getInstance().getPoints());
 
     }
