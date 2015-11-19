@@ -1,6 +1,8 @@
 public class Supervisor {
 
 	public static final int SUPERVISOR_BONUS = 2;
+
+	private Counter currentCounter;
 	
 	public void speedUp(Counter counter){
 		counter.setProcessSpeed(counter.getProcessSpeed() * SUPERVISOR_BONUS);
@@ -10,6 +12,12 @@ public class Supervisor {
 		counter.setProcessSpeed(counter.getProcessSpeed() / SUPERVISOR_BONUS);
 	}
 
-	//this is a test
+	public Counter getCurrentCounter(){
+		return currentCounter;
+	}
+
+	public void setCurrentCounter(Counter counter) {
+		this.currentCounter = counter;
+	}
 
 }

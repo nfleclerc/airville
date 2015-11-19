@@ -31,7 +31,14 @@ public class Player {
 		return instance;
 	}	
 
-	public void moveSupervisor(Supervisor supervisor){
+	public void moveSupervisor(Supervisor supervisor, Counter counter){
+
+		supervisor.getCurrentCounter().setSupervisor(null);
+		supervisor.slowDown(supervisor.getCurrentCounter());
+
+		counter.setSupervisor(supervisor);
+		supervisor.speedUp(counter);
+		supervisor.setCurrentCounter(counter);
 	}
 
 	public void addPoints(int points){

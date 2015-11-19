@@ -1,5 +1,15 @@
 public class AutomaticCounter extends Counter {
 
+	private FloatingAgent agent;
+
+	public AutomaticCounter(){
+		agent = null;
+	}
+
+	public void setAgent(FloatingAgent agent) {
+		this.agent = agent;
+	}
+
 	@Override
 	public void processPassengers() {
 		for (Passenger passenger : getPassengersInLine()){
@@ -39,10 +49,10 @@ public class AutomaticCounter extends Counter {
 			passenger.processAt(this);
 			getPassengersInLine().remove(passenger);
 		} else {
-			FloatingAgent agent = FloatingAgent.callForAssistanceAt(this);
+			agent = FloatingAgent.callForAssistanceAt(this);
 			passenger.processAt(this);
 			getPassengersInLine().remove(passenger);
-			agent.leaveCounter();
+			agent.leaveCounter(this);
 		}
 	}
 

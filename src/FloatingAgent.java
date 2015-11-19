@@ -1,13 +1,17 @@
+import java.util.Random;
+
 public class FloatingAgent {
 
-	public static FloatingAgent callForAssistanceAt(Counter counter){
-		//moves a free agent to a counter
-		//returns the agent that is going to help
-		return null;
+	public static FloatingAgent callForAssistanceAt(AutomaticCounter counter){
+		FloatingAgent agent =
+				GamePieces.getFloatingAgents().get((int) (Math.random() * GamePieces.getFloatingAgents().size()));
+		GamePieces.getFloatingAgents().remove(agent);
+		return agent;
 	}
 
-	public void leaveCounter(){
-		//agent goes back to floating around
+	public void leaveCounter(AutomaticCounter counter){
+		counter.setAgent(null);
+		GamePieces.addFloatingAgent(this);
 	}
 
 }
