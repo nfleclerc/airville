@@ -1,12 +1,18 @@
 package airville;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class AutomaticCounter extends Counter {
 
 	private FloatingAgent agent;
 
+	private List<Passenger> adjustedLine;
+
 	public AutomaticCounter(){
 		super();
 		agent = null;
+		adjustedLine = new LinkedList<>();
 	}
 
 	public void setAgent(FloatingAgent agent) {
@@ -25,10 +31,13 @@ public class AutomaticCounter extends Counter {
 				//this passenger needs special assistance
 				//remove them from the line and queue them at a
 				//non automatic counter
-				getPassengersInLine().remove(passenger);
+
+				//this passenger will not be added to the new line
 				passenger.queueAt(GamePieces.getRegularCounter());
 			}
 		}
+
+		processAdjustedLine();
 	}
 
 	private void processPassengersInGroups(Passenger passenger){
@@ -46,7 +55,8 @@ public class AutomaticCounter extends Counter {
 				//someone in the group needs assistance
 				//remove the whole group from the line and queue them
 				//all at the same regular counter
-				getPassengersInLine().remove(passenger);
+
+				//this passenger will not be in the new line
 				passenger.getGroup().queueAt(GamePieces.getRegularCounter());
 			}
 		}
@@ -69,19 +79,30 @@ public class AutomaticCounter extends Counter {
 		if (Math.random() > 0.5){
 			//the passenger doesn't need help
 			//process him/her and remove him/her from the line
-			passenger.processAt(this);
-			getPassengersInLine().remove(passenger);
+			adjustedLine.add(passenger);
+			//getPassengersInLine().remove(passenger);
 		} else {
 			//the passenger could use some assistance
 			//call an agent over, set this as this counter's current agent
 			agent = FloatingAgent.callForAssistanceAt(this);
 			//the agent came over, this passenger can be processed normally
-			passenger.processAt(this);
-			getPassengersInLine().remove(passenger);
+			adjustedLine.add(passenger);
+			//getPassengersInLine().remove(passenger);
 			//the agent that came over can leave the counter and he/she
 			//can go back to roaming about
 			agent.leaveCounter(this);
 		}
+	}
+
+	private void processAdjustedLine(){
+		for (Passenger passenger : adjustedLine){
+			passenger.processAt(this);
+		}
+
+		//reset the new list
+		//and clear the old line
+		adjustedLine = new LinkedList<>();
+		clearLine();
 	}
 
 }

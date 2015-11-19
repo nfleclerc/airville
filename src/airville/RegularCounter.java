@@ -28,13 +28,18 @@ public class RegularCounter extends Counter {
 
 		List<Passenger> freqFlyerList = new LinkedList<>();
 
+
 		for (Passenger passenger : getPassengersInLine()){
 			if (passenger.isFrequentFlyer()){
 				freqFlyerList.add(passenger);
 				getPassengersInLine().remove(passenger);
 			}
 		}
+
+		//add the rest of the passengers to the new list
 		getPassengersInLine().stream().forEach(passenger -> freqFlyerList.add(passenger));
+		//remove the rest of the passengers from the original line
+		clearLine();
 		return freqFlyerList;
 	}
 

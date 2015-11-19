@@ -42,4 +42,8 @@ public abstract class Counter {
 	public void setHasSupervisor(boolean hasSupervisor) {
 		this.hasSupervisor = hasSupervisor;
 	}
+
+	public void clearLine(){
+		passengersInLine = new LinkedList<>();
+	}
 }
