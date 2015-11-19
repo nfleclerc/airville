@@ -2,6 +2,7 @@ package tests;
 
 import airville.Player;
 import airville.Store;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,6 +16,7 @@ public class StoreTest {
     private Store store = new Store();
 
     @Before
+    @After
     public void addMoneyForTesting(){
         Player.getInstance().resetCurrencies();
         Player.getInstance().addPoints(200);
