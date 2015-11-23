@@ -9,7 +9,6 @@ public class PassengerGroup {
 	public PassengerGroup(List<Passenger> passengers){
 		this.passengers = passengers;
 		passengers.stream().forEach(passenger -> passenger.setGroup(this));
-		passengers.stream().forEach(passenger -> passenger.setInGroup(true));
 	}
 
 	//queues the whole group at the same counter

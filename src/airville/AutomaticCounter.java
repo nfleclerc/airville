@@ -5,7 +5,8 @@ import java.util.List;
 
 public class AutomaticCounter extends Counter {
 
-	private FloatingAgent agent;
+	private static final double PROBABILITY_PASSENGER_REQ_HELP = 0.5;
+	private Agent agent;
 
 	private List<Passenger> adjustedLine;
 
@@ -15,7 +16,7 @@ public class AutomaticCounter extends Counter {
 		adjustedLine = new LinkedList<>();
 	}
 
-	public void setAgent(FloatingAgent agent) {
+	public void setAgent(Agent agent) {
 		this.agent = agent;
 	}
 
@@ -25,7 +26,7 @@ public class AutomaticCounter extends Counter {
 		for (Passenger passenger : getPassengersInLine()){
 			//if the passenger is just a normal passenger and doest need special
 			//assistance, so check if he/she is in a group
-			if (passenger instanceof RegularPassenger){
+			if (passenger.getPassengerType() == PassengerType.REGULAR){
 				processPassengersInGroups(passenger);
 			} else {
 				//this passenger needs special assistance
@@ -33,7 +34,7 @@ public class AutomaticCounter extends Counter {
 				//non automatic counter
 
 				//this passenger will not be added to the new line
-				passenger.queueAt(GamePieces.getRegularCounter());
+				passenger.queueAt(Airport.getInstance().getRandomRegularCounter());
 			}
 		}
 
@@ -57,7 +58,7 @@ public class AutomaticCounter extends Counter {
 				//all at the same regular counter
 
 				//this passenger will not be in the new line
-				passenger.getGroup().queueAt(GamePieces.getRegularCounter());
+				passenger.getGroup().queueAt(Airport.getInstance().getRandomRegularCounter());
 			}
 		}
 	}
@@ -66,7 +67,7 @@ public class AutomaticCounter extends Counter {
 		//check each passenger in a group
 		//if any of them are not regular, return true
 		for (Passenger passenger : group.getPassengers()){
-			if (!(passenger instanceof RegularPassenger)){
+			if (!(passenger.getPassengerType() == PassengerType.REGULAR)){
 				return true;
 			}
 		}
@@ -76,7 +77,7 @@ public class AutomaticCounter extends Counter {
 	private void processPassenger(Passenger passenger){
 		//randomly select with 50% probability if a passenger needs help
 		//from an agent while at an automatic check in counter
-		if (Math.random() > 0.5){
+		if (Math.random() > PROBABILITY_PASSENGER_REQ_HELP){
 			//the passenger doesn't need help
 			//process him/her and remove him/her from the line
 			adjustedLine.add(passenger);
@@ -84,7 +85,7 @@ public class AutomaticCounter extends Counter {
 		} else {
 			//the passenger could use some assistance
 			//call an agent over, set this as this counter's current agent
-			agent = FloatingAgent.callForAssistanceAt(this);
+			agent = Agent.callForAssistanceAt(this);
 			//the agent came over, this passenger can be processed normally
 			adjustedLine.add(passenger);
 			//getPassengersInLine().remove(passenger);

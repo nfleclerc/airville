@@ -2,19 +2,18 @@ package airville;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
-public abstract class Counter {
-	
-	private Supervisor supervisor;
-	private boolean hasSupervisor;
+public abstract class Counter implements GamePiece{
+
+	private Optional<Supervisor> supervisor;
 	private double processSpeed;
 	private List<Passenger> passengersInLine;
 	
 	public abstract void processPassengers();
 
 	public Counter(){
-		this.supervisor = null;
-		this.hasSupervisor = false;
+		this.supervisor = Optional.empty();
 		this.processSpeed = 1;
 		this.passengersInLine = new LinkedList<>();
 	}
@@ -24,7 +23,7 @@ public abstract class Counter {
 	}
 	
 	public void setSupervisor(Supervisor supervisor){
-		this.supervisor = supervisor;
+		this.supervisor = Optional.of(supervisor);
 	}
 
 	public double getProcessSpeed(){
@@ -36,11 +35,7 @@ public abstract class Counter {
 	}
 
 	public boolean hasSupervisor() {
-		return hasSupervisor;
-	}
-
-	public void setHasSupervisor(boolean hasSupervisor) {
-		this.hasSupervisor = hasSupervisor;
+		return supervisor.isPresent();
 	}
 
 	public void clearLine(){

@@ -7,6 +7,7 @@ public class ExtraBaggagePassenger extends AbstractPassenger {
 
 	ExtraBaggagePassenger(boolean frequentFlyer){
 		super(frequentFlyer);
+		setPassengerType(PassengerType.EXTRABAGGAGE);
 	}
 
 	@Override

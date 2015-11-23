@@ -1,10 +1,12 @@
 package airville;
 
-public abstract class AbstractPassenger implements Passenger{
+import java.util.Optional;
 
-	private PassengerGroup group;
+public abstract class AbstractPassenger implements Passenger, GamePiece{
+
+	private Optional<PassengerGroup> group;
 	private boolean frequentFlyer;
-	private boolean inGroup;
+	private PassengerType passengerType;
 
 	//factory method returns different subclasses based on enum
 	public static Passenger make(PassengerType passengerType, boolean frequentFlyer){
@@ -22,27 +24,31 @@ public abstract class AbstractPassenger implements Passenger{
 
 	@Override
 	public void setGroup(PassengerGroup group){
-		this.group = group;
-	}
-
-	@Override
-	public void setInGroup(boolean inGroup){
-		this.inGroup = inGroup;
+		this.group = Optional.of(group);
 	}
 
 	@Override
 	public boolean isInGroup(){
-		return this.inGroup;
+		return group.isPresent();
 	}
 
 	@Override
 	public PassengerGroup getGroup(){
-		return this.group;
+		return group.get();
 	}
 
 	@Override
 	public boolean isFrequentFlyer(){
 		return this.frequentFlyer;
+	}
+
+	protected void setPassengerType(PassengerType passengerType){
+		this.passengerType = passengerType;
+	}
+
+	@Override
+	public PassengerType getPassengerType(){
+		return this.passengerType;
 	}
 
 }

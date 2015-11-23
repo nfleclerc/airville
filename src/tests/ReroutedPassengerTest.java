@@ -18,7 +18,6 @@ public class ReroutedPassengerTest {
         //Structured Branch Testing
         //branch where there is a supervisor at this counter
         counter.setSupervisor(new Supervisor());
-        counter.setHasSupervisor(true);
         passenger.processAt(counter);
         int pointsAfterProcess = Player.getInstance().getPoints();
         assertEquals(pointsBeforeProcess + ReroutedPassenger.getPointValue(), pointsAfterProcess);

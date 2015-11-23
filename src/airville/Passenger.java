@@ -12,8 +12,8 @@ public interface Passenger {
 
 	PassengerGroup getGroup();
 
-	void setInGroup(boolean inGroup);
-
 	void setGroup(PassengerGroup group);
+
+	PassengerType getPassengerType();
 
 }

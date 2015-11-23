@@ -7,6 +7,7 @@ public class OverbookedPassenger extends AbstractPassenger {
 
 	OverbookedPassenger(boolean frequentFlyer){
 		super(frequentFlyer);
+		setPassengerType(PassengerType.OVERBOOKED);
 	}
 
 	@Override

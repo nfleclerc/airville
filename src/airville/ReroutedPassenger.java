@@ -6,6 +6,7 @@ public class ReroutedPassenger extends AbstractPassenger {
 
 	ReroutedPassenger(boolean frequentFlyer){
 		super(frequentFlyer);
+		setPassengerType(PassengerType.REROUTED);
 	}
 
 	@Override

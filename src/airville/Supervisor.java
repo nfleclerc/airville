@@ -1,6 +1,6 @@
 package airville;
 
-public class Supervisor {
+public class Supervisor implements GamePiece{
 
 	public static final int SUPERVISOR_BONUS = 2;
 

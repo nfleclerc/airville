@@ -39,7 +39,6 @@ public class Player {
 		supervisor.slowDown(supervisor.getCurrentCounter());
 		//removes the supervisor from the counter he/she is currently at
 		supervisor.getCurrentCounter().setSupervisor(null);
-		supervisor.getCurrentCounter().setHasSupervisor(false);
 
 		//sets supervisor to be at the counter
 		counter.setSupervisor(supervisor);
@@ -47,7 +46,6 @@ public class Player {
 		supervisor.speedUp(counter);
 		//passes a reference of the new counter to the supervisor
 		supervisor.setCurrentCounter(counter);
-		counter.setHasSupervisor(true);
 	}
 
 	public void addPoints(int points){
@@ -62,20 +60,21 @@ public class Player {
 		this.diamonds -= diamonds;
 	}
 
-	public void addRegularCounter(){
-		this.numberOfRegularCounters++;
-	}
-
-	public void addAutomaticCounter(){
-		this.numberOfAutoCounters++;
-	}
-
-	public void addAgent(){
-		this.numberOfAgents++;
-	}
-
-	public void addSupervisor(){
-		this.numberOfSupervisors++;
+	public void increaseCountOf(PurchasableGamePieceType gamePieceType){
+		switch (gamePieceType) {
+			case AGENT:
+				this.numberOfAgents++;
+				break;
+			case SUPERVISOR:
+				this.numberOfSupervisors++;
+				break;
+			case REG_COUNTER:
+				this.numberOfRegularCounters++;
+				break;
+			case AUTO_COUNTER:
+				this.numberOfAutoCounters++;
+				break;
+		}
 	}
 
 	public void addDiamond(){

@@ -6,6 +6,7 @@ public class RegularPassenger extends AbstractPassenger{
 
 	RegularPassenger(boolean frequentFlyer){
 		super(frequentFlyer);
+		setPassengerType(PassengerType.REGULAR);
 	}
 
 	@Override
