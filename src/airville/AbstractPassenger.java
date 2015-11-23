@@ -15,6 +15,7 @@ public abstract class AbstractPassenger implements Passenger, GamePiece{
 
 	AbstractPassenger(boolean frequentFlyer){
 		this.frequentFlyer = frequentFlyer;
+		group = Optional.empty();
 	}
 
 	@Override
