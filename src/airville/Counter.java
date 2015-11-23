@@ -9,14 +9,15 @@ public abstract class Counter implements GamePiece{
 	private Optional<Supervisor> supervisor;
 	private double processSpeed;
 	private List<Passenger> passengersInLine;
-	
-	public abstract void processPassengers();
+	private static final int STARTING_PROCESS_SPEED = 1;
 
 	public Counter(){
 		this.supervisor = Optional.empty();
-		this.processSpeed = 1;
+		this.processSpeed = STARTING_PROCESS_SPEED;
 		this.passengersInLine = new LinkedList<>();
 	}
+
+	public abstract void processPassengers();
 
 	public List<Passenger> getPassengersInLine(){
 		return this.passengersInLine;

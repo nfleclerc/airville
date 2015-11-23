@@ -1,6 +1,7 @@
 package tests;
 
 import airville.Player;
+import airville.PurchasableGamePieceType;
 import airville.RegularCounter;
 import airville.Supervisor;
 import org.junit.After;
@@ -45,7 +46,7 @@ public class PlayerTest {
     @Test
     public void testAddRegularCounter() throws Exception {
         int currentRegCounters = Player.getInstance().getNumberOfRegularCounters();
-        Player.getInstance().addRegularCounter();
+        Player.getInstance().increaseCountOf(PurchasableGamePieceType.REG_COUNTER);
         assertTrue(currentRegCounters + 1 ==
                 Player.getInstance().getNumberOfRegularCounters());
     }
@@ -53,7 +54,7 @@ public class PlayerTest {
     @Test
     public void testAddAutomaticCounter() throws Exception {
         int currentAutoCounters = Player.getInstance().getNumberOfAutoCounters();
-        Player.getInstance().addAutomaticCounter();
+        Player.getInstance().increaseCountOf(PurchasableGamePieceType.AUTO_COUNTER);
         assertTrue(currentAutoCounters + 1 ==
                 Player.getInstance().getNumberOfAutoCounters());
     }
@@ -61,7 +62,7 @@ public class PlayerTest {
     @Test
     public void testAddAgent() throws Exception {
         int currentAgentCount = Player.getInstance().getNumberOfAgents();
-        Player.getInstance().addAgent();
+        Player.getInstance().increaseCountOf(PurchasableGamePieceType.AGENT);
         assertTrue(currentAgentCount + 1 ==
                 Player.getInstance().getNumberOfAgents());
     }
@@ -69,7 +70,7 @@ public class PlayerTest {
     @Test
     public void testAddSupervisor() throws Exception {
         int currentSupervisorCount = Player.getInstance().getNumberOfSupervisors();
-        Player.getInstance().addSupervisor();
+        Player.getInstance().increaseCountOf(PurchasableGamePieceType.SUPERVISOR);
         assertTrue(currentSupervisorCount + 1 ==
                 Player.getInstance().getNumberOfSupervisors());
     }

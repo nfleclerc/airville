@@ -19,7 +19,7 @@ public class AutomaticCounterTest {
         //Structured Branch:
         //test in which all passengers are Regular and are not in a group
         int currentPoints = Player.getInstance().getPoints();
-        GamePieces.addFloatingAgent(new FloatingAgent());
+        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
         AutomaticCounter counter = new AutomaticCounter();
         for (int i = 0; i < 5; i++) {
             AbstractPassenger.make(PassengerType.REGULAR, false).queueAt(counter);
@@ -37,7 +37,7 @@ public class AutomaticCounterTest {
         //Structured Branch:
         //test in which passengers are not Regular and not in group
         int currentPoints = Player.getInstance().getPoints();
-        GamePieces.addCounter(new RegularCounter());
+        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
         AutomaticCounter counter = new AutomaticCounter();
         for (int i = 0; i < 3; i++) {
             AbstractPassenger.make(PassengerType.EXTRABAGGAGE, false).queueAt(counter);
@@ -58,8 +58,8 @@ public class AutomaticCounterTest {
         //test in which passengers are in a group but they
         //are all regular
         int currentPoints = Player.getInstance().getPoints();
-        GamePieces.addCounter(new RegularCounter());
-        GamePieces.addFloatingAgent(new FloatingAgent());
+        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
+        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
         List<Passenger> passengerList = new LinkedList<>();
 
         //set up the passenger group
@@ -86,8 +86,8 @@ public class AutomaticCounterTest {
         //test in which passengers are in a group but one
         //member is not regular
         int currentPoints = Player.getInstance().getPoints();
-        GamePieces.addCounter(new RegularCounter());
-        GamePieces.addFloatingAgent(new FloatingAgent());
+        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
+        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
         List<Passenger> passengerList = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
             passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
