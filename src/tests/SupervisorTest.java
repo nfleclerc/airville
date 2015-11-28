@@ -1,10 +1,9 @@
 package tests;
 
-import airville.Counter;
-import airville.RegularCounter;
-import airville.Supervisor;
+import airville.gamepieces.counters.Counter;
+import airville.gamepieces.counters.RegularCounter;
+import airville.gamepieces.Supervisor;
 import org.junit.Test;
-import org.omg.CORBA.Object;
 
 import static org.junit.Assert.*;
 

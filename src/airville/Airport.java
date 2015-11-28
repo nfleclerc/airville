@@ -1,5 +1,11 @@
 package airville;
 
+import airville.gamepieces.Agent;
+import airville.gamepieces.PurchasableGamePieceType;
+import airville.gamepieces.Supervisor;
+import airville.gamepieces.counters.AutomaticCounter;
+import airville.gamepieces.counters.RegularCounter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +18,7 @@ public class Airport {
 	private List<Supervisor> supervisors = new ArrayList<>();
 
 	private static final Player player = Player.getInstance();
+	private static final Store store = Store.getInstance();
 
 	private static final Airport instance = new Airport();
 

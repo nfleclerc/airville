@@ -1,9 +1,9 @@
 package tests;
 
 import airville.Player;
-import airville.PurchasableGamePieceType;
-import airville.RegularCounter;
-import airville.Supervisor;
+import airville.gamepieces.PurchasableGamePieceType;
+import airville.gamepieces.counters.RegularCounter;
+import airville.gamepieces.Supervisor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,8 @@
-package airville;
+package airville.gamepieces;
 
-public class Supervisor implements GamePiece{
+import airville.gamepieces.counters.Counter;
+
+public class Supervisor {
 
 	public static final int SUPERVISOR_BONUS = 2;
 

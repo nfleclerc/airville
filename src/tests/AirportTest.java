@@ -1,9 +1,7 @@
 package tests;
 
 import airville.Airport;
-import airville.AutomaticCounter;
-import airville.PurchasableGamePieceType;
-import airville.RegularCounter;
+import airville.gamepieces.PurchasableGamePieceType;
 import org.junit.Before;
 import org.junit.Test;
 

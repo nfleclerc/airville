@@ -2,7 +2,9 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import airville.*;
+import airville.gamepieces.counters.AutomaticCounter;
+import airville.gamepieces.counters.Counter;
+import airville.passengers.*;
 
 /**
  * Created by Nathaniel on 11/19/2015.

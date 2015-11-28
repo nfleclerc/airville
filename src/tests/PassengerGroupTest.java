@@ -1,6 +1,10 @@
 package tests;
 
-import airville.*;
+import airville.gamepieces.counters.AutomaticCounter;
+import airville.passengers.AbstractPassenger;
+import airville.passengers.Passenger;
+import airville.passengers.PassengerGroup;
+import airville.passengers.PassengerType;
 import org.junit.Test;
 
 import java.util.LinkedList;

@@ -1,5 +1,9 @@
 package airville;
 
+import airville.gamepieces.PurchasableGamePieceType;
+import airville.gamepieces.Supervisor;
+import airville.gamepieces.counters.Counter;
+
 public class Player {
 
 	private static final int STARTING_AGENT_COUNT = 2;

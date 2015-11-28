@@ -1,6 +1,9 @@
-package airville;
+package airville.gamepieces;
 
-public class Agent implements GamePiece {
+import airville.Airport;
+import airville.gamepieces.counters.AutomaticCounter;
+
+public class Agent {
 
 	public static Agent callForAssistanceAt(AutomaticCounter counter){
 		//returns an agent and removes it from the pool of agents just floating around

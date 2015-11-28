@@ -1,6 +1,10 @@
 package tests;
 
 import airville.*;
+import airville.gamepieces.counters.RegularCounter;
+import airville.passengers.AbstractPassenger;
+import airville.passengers.PassengerType;
+import airville.passengers.RegularPassenger;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

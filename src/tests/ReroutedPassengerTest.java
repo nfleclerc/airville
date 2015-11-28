@@ -1,9 +1,12 @@
 package tests;
 
 import airville.*;
+import airville.gamepieces.Supervisor;
+import airville.gamepieces.counters.RegularCounter;
+import airville.passengers.AbstractPassenger;
+import airville.passengers.PassengerType;
+import airville.passengers.ReroutedPassenger;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Nathaniel on 11/19/2015.

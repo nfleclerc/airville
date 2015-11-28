@@ -1,6 +1,18 @@
 package airville;
 
+import airville.gamepieces.PurchasableGamePieceType;
+
 public class Store {
+
+    private static final Store instance = new Store();
+
+    private Store() {
+        //to prevent instantiation
+    }
+
+    public static Store getInstance(){
+        return instance;
+    }
 
     public enum CurrencyType {
         DIAMONDS, POINTS
@@ -11,10 +23,8 @@ public class Store {
     }
 
     public void buyItem(PurchasableGamePieceType gamePieceType){
-        Airport.getInstance()
-                .addItem(gamePieceType);
-        Player.getInstance()
-                .increaseCountOf(gamePieceType);
+        Airport.getInstance().addItem(gamePieceType);
+        Player.getInstance().increaseCountOf(gamePieceType);
         if (PurchasableGamePieceType.SUPERVISOR == gamePieceType){
             removeCurrency(CurrencyType.DIAMONDS, gamePieceType.getGamePieceCost());
         } else {
