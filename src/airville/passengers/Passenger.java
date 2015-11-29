@@ -1,5 +1,5 @@
 package airville.passengers;
-
+import airville.Player;
 import airville.gamepieces.counters.Counter;
 
 /**
@@ -23,11 +23,21 @@ public class Passenger {
         return passengerType;
     }
 
-    public double getBusyTime(){
-        return passengerType.getBusyTime();
+    public void processAt(Counter counter){
+        counter.setBusyTime(counter.getBusyTime() + passengerType.getBusyTime());
+        if (passengerType == PassengerType.REROUTED){
+            processReroutedPassenger(counter);
+        } else {
+            Player.getInstance().addPoints(passengerType.getPoints());
+        }
+        counter.setBusyTime(counter.getBusyTime() - passengerType.getBusyTime());
     }
 
-    public void processAt(Counter counter){
-
+    private void processReroutedPassenger(Counter counter) {
+        if (counter.hasSupervisor()){
+            Player.getInstance().addPoints(passengerType.getPoints());
+        } else {
+            //pass this off to the real time team tbh
+        }
     }
 }

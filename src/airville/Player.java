@@ -4,6 +4,8 @@ import airville.gamepieces.PurchasableGamePieceType;
 import airville.gamepieces.Supervisor;
 import airville.gamepieces.counters.Counter;
 
+import java.util.Optional;
+
 public class Player {
 
 	private static final int STARTING_AGENT_COUNT = 2;
@@ -42,26 +44,14 @@ public class Player {
 		//removes the speed buff from the counter that the supervisor is leaving
 		supervisor.slowDown(supervisor.getCurrentCounter());
 		//removes the supervisor from the counter he/she is currently at
-		supervisor.getCurrentCounter().setSupervisor(null);
+		supervisor.getCurrentCounter().setSupervisor(Optional.empty());
 
 		//sets supervisor to be at the counter
-		counter.setSupervisor(supervisor);
+		counter.setSupervisor(Optional.of(supervisor));
 		//applies the supervisor speed buff to the new counter
 		supervisor.speedUp(counter);
 		//passes a reference of the new counter to the supervisor
-		supervisor.setCurrentCounter(counter);
-	}
-
-	public void addPoints(int points){
-		this.points += points;
-	}
-
-	public void removePoints(int points){
-		this.points -= points;
-	}
-
-	public void removeDiamonds(int diamonds) {
-		this.diamonds -= diamonds;
+		supervisor.setCurrentCounter(Optional.of(counter));
 	}
 
 	public void increaseCountOf(PurchasableGamePieceType gamePieceType){
@@ -79,6 +69,18 @@ public class Player {
 				this.numberOfAutoCounters++;
 				break;
 		}
+	}
+
+	public void addPoints(int points){
+		this.points += points;
+	}
+
+	public void removePoints(int points){
+		this.points -= points;
+	}
+
+	public void removeDiamonds(int diamonds) {
+		this.diamonds -= diamonds;
 	}
 
 	public void addDiamond(){

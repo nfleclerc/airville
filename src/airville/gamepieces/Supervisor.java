@@ -2,28 +2,46 @@ package airville.gamepieces;
 
 import airville.gamepieces.counters.Counter;
 
-public class Supervisor {
+import java.util.Optional;
 
-	public static final int SUPERVISOR_BONUS = 2;
+public class Supervisor implements GamePiece {
 
-	private Counter currentCounter;
+	public static final int SUPERVISOR_SPEEDUP_RATE = 2;
+	public double busyTime;
+	public boolean busy;
+	private Optional<Counter> currentCounter;
 
 	//apply the speed buff supervisor grants to the counter
 	public void speedUp(Counter counter){
-		counter.setProcessSpeed(counter.getProcessSpeed() * SUPERVISOR_BONUS);
+		busy = true;
+		counter.setBusyTime(counter.getBusyTime() / SUPERVISOR_SPEEDUP_RATE);
 	}
 
 	//remove the speed buff supervisor grants to the counter
 	public void slowDown(Counter counter){
-		counter.setProcessSpeed(counter.getProcessSpeed() / SUPERVISOR_BONUS);
+		counter.setBusyTime(counter.getBusyTime() * SUPERVISOR_SPEEDUP_RATE);
 	}
 
 	public Counter getCurrentCounter(){
-		return currentCounter;
+		return currentCounter.get();
 	}
 
-	public void setCurrentCounter(Counter counter) {
+	public void setCurrentCounter(Optional<Counter> counter) {
 		this.currentCounter = counter;
+	}
+
+	@Override
+	public boolean isBusy() {
+		return busy;
+	}
+
+	@Override
+	public double getBusyTime(){
+		return busyTime;
+	}
+
+	public void setBusyTime(double busyTime){
+		this.busyTime = busyTime;
 	}
 
 }

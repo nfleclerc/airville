@@ -15,10 +15,13 @@ public class RegularCounter extends Counter {
 
 	@Override
 	public void processPassengers() {
+		busy = true;
 		Queue<PassengerGroup> adjustedLine = moveFrequentFlyers();
 		while (!adjustedLine.isEmpty()){
 			adjustedLine.poll().processAt(this);
 		}
+		setBusyTime(0);
+		busy = false;
 	}
 
 	private Queue<PassengerGroup> moveFrequentFlyers(){

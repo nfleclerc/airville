@@ -1,7 +1,6 @@
 package airville.passengers;
 
 import airville.gamepieces.counters.Counter;
-import airville.passengers.Passenger;
 
 import java.util.List;
 
@@ -20,6 +19,10 @@ public class PassengerGroup {
 			}
 		}
 		return true;
+	}
+
+	public int size(){
+		return passengers.size();
 	}
 
 	public boolean isOnePassenger(){

@@ -2,10 +2,8 @@ package airville.gamepieces.counters;
 
 import airville.*;
 import airville.gamepieces.Agent;
-import airville.passengers.PassengerGroup;
 
 import java.util.Optional;
-import java.util.PriorityQueue;
 
 public class AutomaticCounter extends Counter {
 
@@ -16,19 +14,25 @@ public class AutomaticCounter extends Counter {
 		super();
 	}
 
-	public void setAgent(Agent agent) {
-		this.agent = Optional.of(agent);
-	}
-
 	@Override
 	public void processPassengers() {
+		busy = true;
 		while (!getLine().isEmpty()){
 			if (getLine().peek().isOfRegularPassengers()){
-				getLine().poll().processAt(this);
+				if (Math.random() > PROBABILITY_PASSENGER_REQ_HELP){
+					agent = Optional.of(Agent.callForAssistance(getLine().peek()));
+					getLine().poll().processAt(this);
+					agent.get().leaveCounter();
+					agent = Optional.empty();
+				} else {
+					getLine().poll().processAt(this);
+				}
 			} else {
 				getLine().poll().queueAt(Airport.getInstance().getRandomRegularCounter());
 			}
 		}
+		setBusyTime(0);
+		busy = false;
 	}
 
 }

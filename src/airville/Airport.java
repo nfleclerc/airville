@@ -65,7 +65,7 @@ public class Airport {
 		return supervisors;
 	}
 
-	public  void clearLists(){
+	public void clearLists(){
 		regularCounters = new ArrayList<>();
 		automaticCounters = new ArrayList<>();
 		agents = new ArrayList<>();

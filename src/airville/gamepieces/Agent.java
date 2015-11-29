@@ -2,10 +2,16 @@ package airville.gamepieces;
 
 import airville.Airport;
 import airville.gamepieces.counters.AutomaticCounter;
+import airville.passengers.Passenger;
+import airville.passengers.PassengerGroup;
+import airville.passengers.PassengerType;
 
-public class Agent {
+public class Agent implements GamePiece {
 
-	public static Agent callForAssistanceAt(AutomaticCounter counter){
+	private boolean busy;
+	private double busyTime;
+
+	public static Agent callForAssistance(PassengerGroup passengerGroupToHelp){
 		//returns an agent and removes it from the pool of agents just floating around
 		Agent agent =
 				//just grabs a random agent thats floating around
@@ -13,13 +19,26 @@ public class Agent {
 						Airport.getInstance().getAgents().size()));
 
 		Airport.getInstance().getAgents().remove(agent);
+		agent.busy = true;
+		agent.busyTime = passengerGroupToHelp.size() * PassengerType.REGULAR.getBusyTime();
 		return agent;
 	}
 
-	public void leaveCounter(AutomaticCounter counter){
+	public void leaveCounter(){
 		//the agent leaves the counter and returns to floating around
-		counter.setAgent(null);
 		Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+		busyTime = 0;
+		busy = false;
+	}
+
+	@Override
+	public boolean isBusy(){
+		return this.busy;
+	}
+
+	@Override
+	public double getBusyTime(){
+		return this.busyTime;
 	}
 
 }
