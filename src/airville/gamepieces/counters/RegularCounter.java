@@ -1,7 +1,6 @@
 package airville.gamepieces.counters;
 
 import airville.passengers.PassengerGroup;
-
 import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Queue;

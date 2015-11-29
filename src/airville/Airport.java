@@ -22,7 +22,9 @@ public class Airport {
 
 	private static final Airport instance = new Airport();
 
-	private Airport(){ /*to prevent instantiation*/ }
+	private Airport(){
+	 /*to prevent instantiation*/
+	}
 
 	public static Airport getInstance(){
 		return instance;
@@ -61,7 +63,7 @@ public class Airport {
 		return agents;
 	}
 
-	public List<Supervisor> getSupervisors() {
+	public List<Supervisor> getSupervisors(){
 		return supervisors;
 	}
 

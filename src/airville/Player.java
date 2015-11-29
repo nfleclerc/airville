@@ -40,7 +40,6 @@ public class Player {
 	}	
 
 	public void moveSupervisor(Supervisor supervisor, Counter counter){
-
 		//removes the speed buff from the counter that the supervisor is leaving
 		supervisor.slowDown(supervisor.getCurrentCounter());
 		//removes the supervisor from the counter he/she is currently at
@@ -52,6 +51,8 @@ public class Player {
 		supervisor.speedUp(counter);
 		//passes a reference of the new counter to the supervisor
 		supervisor.setCurrentCounter(Optional.of(counter));
+		//the supervisor is as busy as long as the counter their at
+		supervisor.setBusyTime(counter.getBusyTime());
 	}
 
 	public void increaseCountOf(PurchasableGamePieceType gamePieceType){
