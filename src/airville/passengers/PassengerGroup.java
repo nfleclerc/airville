@@ -22,12 +22,11 @@ public class PassengerGroup {
 		return true;
 	}
 
-	//queues the whole group at the same counter
+	//queues the group at a counter
 	public void queueAt(Counter counter){
 		counter.getLine().add(this);
 	}
 
-	//processes the
 	public void processAt(Counter counter){
 		passengers.stream().forEach(passenger -> passenger.processAt(counter));
 	}

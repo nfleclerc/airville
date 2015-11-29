@@ -23,7 +23,7 @@ public class Passenger {
         return passengerType;
     }
 
-    public double getBusyTimet(){
+    public double getBusyTime(){
         return passengerType.getBusyTime();
     }
 
