@@ -23,10 +23,18 @@ public enum PurchasableGamePieceType {
         this.gamePieceCost = gamePieceCost;
     }
 
+    /**
+     *
+     * @return
+     */
     public Supplier getConstructor(){
         return this.constructor;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getGamePieceCost(){
         return this.gamePieceCost;
     }

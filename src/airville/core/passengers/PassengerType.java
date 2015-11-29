@@ -1,5 +1,8 @@
 package airville.core.passengers;
 
+/**
+ *
+ */
 public enum PassengerType {
 
 	REGULAR(1, 1),
@@ -15,10 +18,18 @@ public enum PassengerType {
 		this.points = points;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public double getBusyTime(){
 		return this.busyTime;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getPoints(){
 		return this.points;
 	}

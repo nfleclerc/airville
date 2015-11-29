@@ -5,13 +5,21 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ *
+ */
 public class RegularCounter extends Counter {
 
-
+	/**
+	 *
+	 */
 	public RegularCounter(){
 		super();
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public void processPassengers() {
 		busy = true;
@@ -23,6 +31,10 @@ public class RegularCounter extends Counter {
 		busy = false;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	private Queue<PassengerGroup> moveFrequentFlyers(){
 		Iterator iterator = getLine().iterator();
 		Queue<PassengerGroup> adjustedLine = new PriorityQueue<>();

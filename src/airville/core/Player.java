@@ -6,6 +6,9 @@ import airville.core.gamepieces.counters.Counter;
 
 import java.util.Optional;
 
+/**
+ *
+ */
 public class Player {
 
 	private static final int STARTING_AGENT_COUNT = 2;
@@ -23,6 +26,9 @@ public class Player {
 
 	private static final Player instance = new Player();
 
+	/**
+	 *
+	 */
 	private Player(){
 		points = 0;
 		diamonds = 0;
@@ -35,10 +41,19 @@ public class Player {
 
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public static Player getInstance(){
 		return instance;
-	}	
+	}
 
+	/**
+	 *
+	 * @param supervisor
+	 * @param counter
+	 */
 	public void moveSupervisor(Supervisor supervisor, Counter counter){
 		//removes the speed buff from the counter that the supervisor is leaving
 		supervisor.slowDown(supervisor.getCurrentCounter());
@@ -55,6 +70,10 @@ public class Player {
 		supervisor.setBusyTime(counter.getBusyTime());
 	}
 
+	/**
+	 *
+	 * @param gamePieceType
+	 */
 	public void increaseCountOf(PurchasableGamePieceType gamePieceType){
 		switch (gamePieceType) {
 			case AGENT:
@@ -72,46 +91,88 @@ public class Player {
 		}
 	}
 
+	/**
+	 *
+	 * @param points
+	 */
 	public void addPoints(int points){
 		this.points += points;
 	}
 
+	/**
+	 *
+	 * @param points
+	 */
 	public void removePoints(int points){
 		this.points -= points;
 	}
 
+	/**
+	 *
+	 * @param diamonds
+	 */
 	public void removeDiamonds(int diamonds) {
 		this.diamonds -= diamonds;
 	}
 
+	/**
+	 *
+	 */
 	public void addDiamond(){
 		this.diamonds++;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getPoints() {
 		return points;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getDiamonds() {
 		return diamonds;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getNumberOfAgents() {
 		return numberOfAgents;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getNumberOfRegularCounters() {
 		return numberOfRegularCounters;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getNumberOfAutoCounters() {
 		return numberOfAutoCounters;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public int getNumberOfSupervisors() {
 		return numberOfSupervisors;
 	}
 
+	/**
+	 *
+	 */
 	public void resetCurrencies(){
 		points = 0;
 		diamonds = 0;

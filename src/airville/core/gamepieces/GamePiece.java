@@ -5,7 +5,16 @@ package airville.core.gamepieces;
  */
 public interface GamePiece {
 
+    /**
+     *
+     * @return
+     */
     boolean isBusy();
+
+    /**
+     *
+     * @return
+     */
     double getBusyTime();
 
 }

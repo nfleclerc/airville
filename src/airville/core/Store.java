@@ -2,6 +2,9 @@ package airville.core;
 
 import airville.core.gamepieces.PurchasableGamePieceType;
 
+/**
+ *
+ */
 public class Store {
 
     private static final Store instance = new Store();
@@ -10,18 +13,32 @@ public class Store {
         //to prevent instantiation
     }
 
+    /**
+     *
+     * @return
+     */
     public static Store getInstance(){
         return instance;
     }
 
+    /**
+     *
+     */
     public enum CurrencyType {
         DIAMONDS, POINTS
     }
 
+    /**
+     *
+     */
     public void buyDiamond(){
         //prompt the user to enter credit card details and handle this elsewhere
     }
 
+    /**
+     *
+     * @param gamePieceType
+     */
     public void buyItem(PurchasableGamePieceType gamePieceType){
         Airport.getInstance().addItem(gamePieceType);
         Player.getInstance().increaseCountOf(gamePieceType);
@@ -32,6 +49,11 @@ public class Store {
         }
     }
 
+    /**
+     *
+     * @param currencyType
+     * @param cost
+     */
     private void removeCurrency(CurrencyType currencyType, int cost){
         switch (currencyType){
             case DIAMONDS:

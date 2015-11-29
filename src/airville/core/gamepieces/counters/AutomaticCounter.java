@@ -5,15 +5,24 @@ import airville.core.gamepieces.Agent;
 
 import java.util.Optional;
 
+/**
+ *
+ */
 public class AutomaticCounter extends Counter {
 
 	private static final double PROBABILITY_PASSENGER_REQ_HELP = 0.5;
 	private Optional<Agent> agent;
 
+	/**
+	 *
+	 */
 	public AutomaticCounter(){
 		super();
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public void processPassengers() {
 		busy = true;

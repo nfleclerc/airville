@@ -4,11 +4,19 @@ import airville.core.Airport;
 import airville.core.passengers.PassengerGroup;
 import airville.core.passengers.PassengerType;
 
+/**
+ *
+ */
 public class Agent implements GamePiece {
 
 	private boolean busy;
 	private double busyTime;
 
+	/**
+	 *
+	 * @param passengerGroupToHelp
+	 * @return
+	 */
 	public static Agent callForAssistance(PassengerGroup passengerGroupToHelp){
 		//returns an agent and removes it from the pool of agents just floating around
 		Agent agent =
@@ -22,6 +30,9 @@ public class Agent implements GamePiece {
 		return agent;
 	}
 
+	/**
+	 *
+	 */
 	public void leaveCounter(){
 		//the agent leaves the counter and returns to floating around
 		Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
@@ -29,11 +40,19 @@ public class Agent implements GamePiece {
 		busy = false;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	@Override
 	public boolean isBusy(){
 		return this.busy;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	@Override
 	public double getBusyTime(){
 		return this.busyTime;

@@ -9,6 +9,9 @@ import airville.core.gamepieces.counters.RegularCounter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class Airport {
 
 	//holds all the characters and counters in the game
@@ -26,10 +29,18 @@ public class Airport {
 	 /*to prevent instantiation*/
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public static Airport getInstance(){
 		return instance;
 	}
 
+	/**
+	 *
+	 * @param gamePieceType
+	 */
 	public void addItem(PurchasableGamePieceType gamePieceType){
 		switch (gamePieceType) {
 			case AGENT:
@@ -47,26 +58,49 @@ public class Airport {
 		}
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public RegularCounter getRandomRegularCounter(){
 		return (regularCounters.get((int) (Math.random() * regularCounters.size())));
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public List<RegularCounter> getRegularCounters() {
 		return regularCounters;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public List<AutomaticCounter> getAutomaticCounters() {
 		return automaticCounters;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public List<Agent> getAgents() {
 		return agents;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public List<Supervisor> getSupervisors(){
 		return supervisors;
 	}
 
+	/**
+	 *
+	 */
 	public void clearLists(){
 		regularCounters = new ArrayList<>();
 		automaticCounters = new ArrayList<>();

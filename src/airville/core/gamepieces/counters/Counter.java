@@ -6,6 +6,9 @@ import airville.core.passengers.PassengerGroup;
 
 import java.util.*;
 
+/**
+ *
+ */
 public abstract class Counter implements GamePiece{
 
 	private Optional<Supervisor> supervisor;
@@ -14,6 +17,9 @@ public abstract class Counter implements GamePiece{
 	private static final int STARTING_BUSY_TIME = 0;
 	protected boolean busy;
 
+	/**
+	 *
+	 */
 	public Counter(){
 		this.supervisor = Optional.empty();
 		this.busyTime = STARTING_BUSY_TIME;
@@ -21,28 +27,55 @@ public abstract class Counter implements GamePiece{
 		this.busy = false;
 	}
 
+	/**
+	 *
+	 */
 	public abstract void processPassengers();
 
+	/**
+	 *
+	 * @return
+	 */
 	public Queue<PassengerGroup> getLine() {
 		return line;
 	}
-	
+
+	/**
+	 *
+	 * @param supervisor
+	 */
 	public void setSupervisor(Optional<Supervisor> supervisor){
 		this.supervisor = supervisor;
 	}
 
-	public double getBusyTime(){
+	/**
+	 *
+	 * @return
+	 */
+ 	public double getBusyTime(){
 		return this.busyTime;
 	}
 
+	/**
+	 *
+	 * @param busyTime
+	 */
 	public void setBusyTime(double busyTime){
 		this.busyTime = busyTime;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	public boolean hasSupervisor() {
 		return supervisor.isPresent();
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	@Override
 	public boolean isBusy(){
 		return this.busy;
