@@ -1,7 +1,7 @@
-package airville.gamepieces.counters;
+package airville.core.gamepieces.counters;
 
-import airville.*;
-import airville.gamepieces.Agent;
+import airville.core.Airport;
+import airville.core.gamepieces.Agent;
 
 import java.util.Optional;
 

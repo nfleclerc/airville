@@ -1,12 +1,9 @@
-package tests;
+package airville.tests;
 
-import airville.Player;
-import airville.Store;
+import airville.core.Player;
+import airville.core.Store;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Nathaniel on 11/19/2015.

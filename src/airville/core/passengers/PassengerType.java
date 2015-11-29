@@ -1,6 +1,4 @@
-package airville.passengers;
-
-import java.util.function.Function;
+package airville.core.passengers;
 
 public enum PassengerType {
 

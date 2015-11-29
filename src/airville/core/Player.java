@@ -1,8 +1,8 @@
-package airville;
+package airville.core;
 
-import airville.gamepieces.PurchasableGamePieceType;
-import airville.gamepieces.Supervisor;
-import airville.gamepieces.counters.Counter;
+import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.Supervisor;
+import airville.core.gamepieces.counters.Counter;
 
 import java.util.Optional;
 

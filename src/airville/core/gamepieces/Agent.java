@@ -1,10 +1,8 @@
-package airville.gamepieces;
+package airville.core.gamepieces;
 
-import airville.Airport;
-import airville.gamepieces.counters.AutomaticCounter;
-import airville.passengers.Passenger;
-import airville.passengers.PassengerGroup;
-import airville.passengers.PassengerType;
+import airville.core.Airport;
+import airville.core.passengers.PassengerGroup;
+import airville.core.passengers.PassengerType;
 
 public class Agent implements GamePiece {
 

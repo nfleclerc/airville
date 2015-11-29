@@ -1,6 +1,6 @@
-package airville.passengers;
+package airville.core.passengers;
 
-import airville.gamepieces.counters.Counter;
+import airville.core.gamepieces.counters.Counter;
 
 import java.util.List;
 

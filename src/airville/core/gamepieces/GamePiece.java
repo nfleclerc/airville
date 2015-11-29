@@ -1,4 +1,4 @@
-package airville.gamepieces;
+package airville.core.gamepieces;
 
 /**
  * Created by nathaniel on 11/28/15.

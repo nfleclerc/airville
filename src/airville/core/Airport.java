@@ -1,10 +1,10 @@
-package airville;
+package airville.core;
 
-import airville.gamepieces.Agent;
-import airville.gamepieces.PurchasableGamePieceType;
-import airville.gamepieces.Supervisor;
-import airville.gamepieces.counters.AutomaticCounter;
-import airville.gamepieces.counters.RegularCounter;
+import airville.core.gamepieces.Agent;
+import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.Supervisor;
+import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.gamepieces.counters.RegularCounter;
 
 import java.util.ArrayList;
 import java.util.List;

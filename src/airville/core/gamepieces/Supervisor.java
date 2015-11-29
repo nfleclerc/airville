@@ -1,6 +1,6 @@
-package airville.gamepieces;
+package airville.core.gamepieces;
 
-import airville.gamepieces.counters.Counter;
+import airville.core.gamepieces.counters.Counter;
 
 import java.util.Optional;
 

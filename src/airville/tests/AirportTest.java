@@ -1,7 +1,7 @@
-package tests;
+package airville.tests;
 
-import airville.Airport;
-import airville.gamepieces.PurchasableGamePieceType;
+import airville.core.Airport;
+import airville.core.gamepieces.PurchasableGamePieceType;
 import org.junit.Before;
 import org.junit.Test;
 

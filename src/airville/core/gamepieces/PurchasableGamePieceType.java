@@ -1,7 +1,7 @@
-package airville.gamepieces;
+package airville.core.gamepieces;
 
-import airville.gamepieces.counters.AutomaticCounter;
-import airville.gamepieces.counters.RegularCounter;
+import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.gamepieces.counters.RegularCounter;
 
 import java.util.function.Supplier;
 

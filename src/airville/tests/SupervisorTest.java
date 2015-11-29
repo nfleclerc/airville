@@ -1,8 +1,8 @@
-package tests;
+package airville.tests;
 
-import airville.gamepieces.counters.Counter;
-import airville.gamepieces.counters.RegularCounter;
-import airville.gamepieces.Supervisor;
+import airville.core.gamepieces.counters.Counter;
+import airville.core.gamepieces.counters.RegularCounter;
+import airville.core.gamepieces.Supervisor;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

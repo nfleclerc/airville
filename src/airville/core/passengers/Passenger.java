@@ -1,6 +1,6 @@
-package airville.passengers;
-import airville.Player;
-import airville.gamepieces.counters.Counter;
+package airville.core.passengers;
+import airville.core.Player;
+import airville.core.gamepieces.counters.Counter;
 
 /**
  * Created by nathaniel on 11/28/15.

@@ -1,8 +1,8 @@
-package airville.gamepieces.counters;
+package airville.core.gamepieces.counters;
 
-import airville.gamepieces.GamePiece;
-import airville.gamepieces.Supervisor;
-import airville.passengers.PassengerGroup;
+import airville.core.gamepieces.GamePiece;
+import airville.core.gamepieces.Supervisor;
+import airville.core.passengers.PassengerGroup;
 
 import java.util.*;
 

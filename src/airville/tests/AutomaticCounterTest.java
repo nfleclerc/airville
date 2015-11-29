@@ -1,9 +1,10 @@
-package tests;
+package airville.tests;
 
-import airville.*;
-import airville.gamepieces.PurchasableGamePieceType;
-import airville.gamepieces.counters.AutomaticCounter;
-import airville.passengers.*;
+import airville.core.Airport;
+import airville.core.Player;
+import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.passengers.*;
 import org.junit.Test;
 
 import java.util.LinkedList;

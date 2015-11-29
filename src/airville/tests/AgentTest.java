@@ -1,9 +1,9 @@
-package tests;
+package airville.tests;
 
-import airville.*;
-import airville.gamepieces.Agent;
-import airville.gamepieces.PurchasableGamePieceType;
-import airville.gamepieces.counters.AutomaticCounter;
+import airville.core.Airport;
+import airville.core.gamepieces.Agent;
+import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.counters.AutomaticCounter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Nathaniel on 11/19/2015.
  */
-public class FloatingAgentTest {
+public class AgentTest {
 
 
     @Before

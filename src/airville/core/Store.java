@@ -1,6 +1,6 @@
-package airville;
+package airville.core;
 
-import airville.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.PurchasableGamePieceType;
 
 public class Store {
 
