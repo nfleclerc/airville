@@ -22,11 +22,11 @@ public class AutomaticCounter extends Counter {
 
 	@Override
 	public void processPassengers() {
-		while (!line.isEmpty()){
-			if (line.peek().isOfRegularPassengers()){
-				line.poll().processAt(this);
+		while (!getLine().isEmpty()){
+			if (getLine().peek().isOfRegularPassengers()){
+				getLine().poll().processAt(this);
 			} else {
-				line.poll().queueAt(Airport.getInstance().getRandomRegularCounter());
+				getLine().poll().queueAt(Airport.getInstance().getRandomRegularCounter());
 			}
 		}
 	}

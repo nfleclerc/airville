@@ -9,7 +9,7 @@ public abstract class Counter {
 
 	private Optional<Supervisor> supervisor;
 	private double busyTime;
-	protected Queue<PassengerGroup> line;
+	private Queue<PassengerGroup> line;
 	private static final int STARTING_PROCESS_BUSY_TIME = 1;
 
 	public Counter(){
@@ -20,6 +20,9 @@ public abstract class Counter {
 
 	public abstract void processPassengers();
 
+	public Queue<PassengerGroup> getLine() {
+		return line;
+	}
 	
 	public void setSupervisor(Supervisor supervisor){
 		this.supervisor = Optional.of(supervisor);

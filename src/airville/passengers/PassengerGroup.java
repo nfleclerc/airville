@@ -22,6 +22,10 @@ public class PassengerGroup {
 		return true;
 	}
 
+	public boolean isOnePassenger(){
+		return passengers.size() == 1;
+	}
+
 	//queues the group at a counter
 	public void queueAt(Counter counter){
 		counter.getLine().add(this);

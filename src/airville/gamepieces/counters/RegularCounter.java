@@ -15,16 +15,22 @@ public class RegularCounter extends Counter {
 
 	@Override
 	public void processPassengers() {
-		//move all freq flyers to the front of the line
-		//process all passengers
+		Queue<PassengerGroup> adjustedLine = moveFrequentFlyers();
+		while (!adjustedLine.isEmpty()){
+			adjustedLine.poll().processAt(this);
+		}
 	}
 
 	private Queue<PassengerGroup> moveFrequentFlyers(){
-		Iterator iterator = line.iterator();
+		Iterator iterator = getLine().iterator();
 		Queue<PassengerGroup> adjustedLine = new PriorityQueue<>();
 		while (iterator.hasNext()){
-
+			PassengerGroup currentGroup = (PassengerGroup) iterator.next();
+			if (currentGroup.isOnePassenger() && currentGroup.getPassengers().get(0).isFrequentFlyer()){
+				adjustedLine.add(currentGroup);
+			}
 		}
+		getLine().stream().forEach(passengerGroup -> adjustedLine.add(passengerGroup));
 		return adjustedLine;
 	}
 }
