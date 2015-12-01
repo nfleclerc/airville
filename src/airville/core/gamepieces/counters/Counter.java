@@ -52,6 +52,7 @@ public abstract class Counter implements GamePiece{
 	 *
 	 * @return
 	 */
+	@Override
  	public double getBusyTime(){
 		return this.busyTime;
 	}

@@ -79,7 +79,7 @@ public class AutomaticCounterTest {
         AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
 
-        assertEquals(3, counter.getLine().size());
+        assertEquals(1, counter.getLine().size());
         counter.processPassengers();
         assertEquals(0, counter.getLine().size());
         //these passengers should all be processed normally so points
@@ -107,7 +107,7 @@ public class AutomaticCounterTest {
         AutomaticCounter counter = new AutomaticCounter();
 
         group.queueAt(counter);
-        assertEquals(4, counter.getLine().size());
+        assertEquals(1, counter.getLine().size());
         counter.processPassengers();
         assertEquals(0, counter.getLine().size());
         //these passengers should all be requeued at another line so no

@@ -10,7 +10,7 @@ import org.junit.Before;
  */
 public class StoreTest {
 
-    private Store store = new Store();
+    private Store store = Store.getInstance();
 
     @Before
     @After

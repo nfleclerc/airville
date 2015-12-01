@@ -16,15 +16,17 @@ public class SupervisorTest {
     public void testSpeedUp() throws Exception {
         Supervisor supervisor = new Supervisor();
         Counter counter = new RegularCounter();
+        counter.setBusyTime(2);
         supervisor.speedUp(counter);
-        assertTrue(2 == counter.getProcessSpeed());
+        assertTrue(1 == counter.getBusyTime());
     }
 
     @Test
     public void testSlowDown() throws Exception {
         Supervisor supervisor = new Supervisor();
         Counter counter = new RegularCounter();
+        counter.setBusyTime(2);
         supervisor.slowDown(counter);
-        assertTrue(counter.getProcessSpeed() == 0.5);
+        assertTrue(4 == counter.getBusyTime());
     }
 }

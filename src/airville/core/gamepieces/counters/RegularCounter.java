@@ -45,6 +45,7 @@ public class RegularCounter extends Counter {
 			}
 		}
 		getLine().stream().forEach(passengerGroup -> adjustedLine.add(passengerGroup));
+		getLine().clear();
 		return adjustedLine;
 	}
 }

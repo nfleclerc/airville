@@ -1,11 +1,11 @@
 package airville.tests;
 
 import airville.core.gamepieces.counters.AutomaticCounter;
-import airville.core.passengers.AbstractPassenger;
 import airville.core.passengers.Passenger;
 import airville.core.passengers.PassengerGroup;
 import airville.core.passengers.PassengerType;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,13 +19,13 @@ public class PassengerGroupTest {
     public void testQueueAt() throws Exception {
         List<Passenger> passengerList = new LinkedList<>();
         for (int i = 0; i < 4; i++) {
-            passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+            passengerList.add(new Passenger(false, PassengerType.REGULAR));
         }
         PassengerGroup group = new PassengerGroup(passengerList);
         AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
         //testing if all passengers are queued at the same counter
-        assertEquals(4, counter.getLine().size());
+        assertTrue(4 == counter.getLine().peek().size());
     }
 
     @Test
