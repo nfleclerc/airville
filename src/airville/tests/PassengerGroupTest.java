@@ -99,7 +99,7 @@ public class PassengerGroupTest {
         //Structured Branch in which all passengers are regular
         passengerList.remove(passengerList.size() - 1);
         group = new PassengerGroup(passengerList);
-        assertFalse(group.isOfFrequentFlyers());
+        assertTrue(group.isOfFrequentFlyers());
 
     }
 }

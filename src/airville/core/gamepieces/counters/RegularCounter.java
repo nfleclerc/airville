@@ -39,7 +39,7 @@ public class RegularCounter extends Counter {
 	}
 
 	/**
-	 * Creates a new queue for this class to use. Moves all the solo frequent flyers
+	 * Creates a new queue for this class to use. Moves all the frequent flyers
 	 * to the head of the line.
 	 * @return An adjusted line with the frequent flyers at the head.
 	 */
@@ -47,11 +47,13 @@ public class RegularCounter extends Counter {
 		Iterator iterator = getLine().iterator();
 		Queue<PassengerGroup> adjustedLine = new PriorityQueue<>();
 		while (iterator.hasNext()){
-			//iterate through the original group
+			//iterate through the original line
 			PassengerGroup currentGroup = (PassengerGroup) iterator.next();
 			if (currentGroup.isOfFrequentFlyers()){
 				//if the passenger is a frequent flyer add them into the new line
+				//and removes them from the old line
 				adjustedLine.add(currentGroup);
+				getLine().remove(currentGroup);
 			}
 		}
 		//add the remaining passengers into the line. all the frequent flyers

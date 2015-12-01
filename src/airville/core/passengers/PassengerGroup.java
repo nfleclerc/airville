@@ -1,13 +1,14 @@
 package airville.core.passengers;
 
 import airville.core.gamepieces.counters.Counter;
+import com.sun.istack.internal.NotNull;
 
 import java.util.List;
 
 /**
  * A group of Passengers.
  */
-public class PassengerGroup {
+public class PassengerGroup implements Comparable<PassengerGroup> {
 
 	private List<Passenger> passengers;
 
@@ -89,6 +90,22 @@ public class PassengerGroup {
 		return passengers;
 	}
 
+	/**
+	 * Implements the CompareTo() method in Comparable to compare two passengers groups
+	 * based on their size.
+	 * @param group The group to compare this passenger to.
+	 * @return Returns 1 if this group is larger, -1 if this group is smaller, and 0 if they are of equal sizes.
+	 */
+	@Override
+	public int compareTo(PassengerGroup group) {
+		if (this.size() > group.size()){
+			return 1;
+		} else if(this.size() < group.size()) {
+			return -1;
+		} else {
+			return 0;
+		}
+	}
 }
 
 

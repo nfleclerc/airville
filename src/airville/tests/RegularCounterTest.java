@@ -5,6 +5,7 @@ import airville.core.gamepieces.counters.RegularCounter;
 import airville.core.passengers.Passenger;
 import airville.core.passengers.PassengerGroup;
 import airville.core.passengers.PassengerType;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -16,6 +17,11 @@ import static org.junit.Assert.*;
  * Created by Nathaniel on 11/19/2015.
  */
 public class RegularCounterTest {
+
+    @Before
+    public void resetPoints(){
+        Player.getInstance().resetCurrencies();
+    }
 
     @Test
     public void testProcessPassengers() throws Exception {

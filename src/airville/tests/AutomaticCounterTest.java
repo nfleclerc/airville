@@ -5,6 +5,7 @@ import airville.core.Player;
 import airville.core.gamepieces.PurchasableGamePieceType;
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.passengers.*;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -16,6 +17,12 @@ import static org.junit.Assert.*;
  * Created by Nathaniel on 11/19/2015.
  */
 public class AutomaticCounterTest {
+
+
+    @Before
+    public void resetPoints(){
+        Player.getInstance().resetCurrencies();
+    }
 
     @Test
     public void testProcessRegularPassengers() throws Exception {
