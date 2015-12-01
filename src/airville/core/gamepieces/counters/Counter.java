@@ -3,7 +3,6 @@ package airville.core.gamepieces.counters;
 import airville.core.gamepieces.GamePiece;
 import airville.core.gamepieces.Supervisor;
 import airville.core.passengers.PassengerGroup;
-
 import java.util.*;
 
 /**

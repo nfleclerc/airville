@@ -2,7 +2,6 @@ package airville.core.gamepieces;
 
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.gamepieces.counters.RegularCounter;
-
 import java.util.function.Supplier;
 
 /**

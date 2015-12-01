@@ -1,7 +1,6 @@
 package airville.core.gamepieces;
 
 import airville.core.gamepieces.counters.Counter;
-
 import java.util.Optional;
 
 /**

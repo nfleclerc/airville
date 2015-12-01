@@ -2,7 +2,6 @@ package airville.core.gamepieces.counters;
 
 import airville.core.Airport;
 import airville.core.gamepieces.Agent;
-
 import java.util.Optional;
 
 /**
