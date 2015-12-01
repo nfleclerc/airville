@@ -1,7 +1,8 @@
 package airville.core.passengers;
 
 /**
- *
+ * An Enum describing each type of Passenger. Passengers can either be Regular, Rerouted,
+ * have Extra Baggage, or be Overbooked.
  */
 public enum PassengerType {
 
@@ -19,16 +20,16 @@ public enum PassengerType {
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns how long this type of Passenger is busy for when it is being processed.
+	 * @return The amount of time is takes to process this Passenger.
 	 */
 	public double getBusyTime(){
 		return this.busyTime;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Return the amount of points this type of Passenger is worth when successfully processed.
+	 * @return The amount of points this type of Passenger is worth.
 	 */
 	public int getPoints(){
 		return this.points;
