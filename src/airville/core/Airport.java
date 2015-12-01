@@ -102,9 +102,9 @@ public class Airport {
 	 *
 	 */
 	public void clearLists(){
-		regularCounters = new ArrayList<>();
-		automaticCounters = new ArrayList<>();
-		agents = new ArrayList<>();
-		supervisors = new ArrayList<>();
+		regularCounters.clear();
+		automaticCounters.clear();
+		agents.clear();
+		supervisors.clear();
 	}
 }

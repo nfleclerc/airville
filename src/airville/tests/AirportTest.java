@@ -30,6 +30,14 @@ public class AirportTest {
         Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
         assertTrue(!Airport.getInstance().getRegularCounters().isEmpty());
 
+        //Structured Branch: Test if supervisor is being added to correct list
+        Airport.getInstance().addItem(PurchasableGamePieceType.SUPERVISOR);
+        assertTrue(!Airport.getInstance().getSupervisors().isEmpty());
+
+        //Structured Branch: Test is agent is being added to correct list
+        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        assertTrue(!Airport.getInstance().getAgents().isEmpty());
+
 
     }
 
