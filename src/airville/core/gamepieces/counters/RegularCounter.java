@@ -6,19 +6,21 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- *
+ * A Regular Counter that can process passengers. Passengers in this line can be of any type, and
+ * Passengers that are alone and frequent flyers are always processed first.
  */
 public class RegularCounter extends Counter {
 
 	/**
-	 *
+	 * Instantiates a new RegularCounter.
 	 */
 	public RegularCounter(){
 		super();
 	}
 
 	/**
-	 *
+	 * Process all the Passengers in this line. Frequent flyers are always processed first
+	 * and passengers can be of any type.
 	 */
 	@Override
 	public void processPassengers() {
@@ -32,8 +34,9 @@ public class RegularCounter extends Counter {
 	}
 
 	/**
-	 *
-	 * @return
+	 * Creates a new queue for this class to use. Moves all the solo frequent flyers
+	 * to the head of the line.
+	 * @return An adjusted line with the frequent flyers at the head.
 	 */
 	private Queue<PassengerGroup> moveFrequentFlyers(){
 		Iterator iterator = getLine().iterator();

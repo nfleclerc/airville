@@ -6,7 +6,8 @@ import airville.core.gamepieces.Agent;
 import java.util.Optional;
 
 /**
- *
+ * An Automatic Counter to process Passengers. Can only process Regular Passengers and does
+ * so regardless if they are frequent flyers or not.
  */
 public class AutomaticCounter extends Counter {
 
@@ -14,14 +15,16 @@ public class AutomaticCounter extends Counter {
 	private Optional<Agent> agent;
 
 	/**
-	 *
+	 * Instantiates a new AutomaticCounter.
 	 */
 	public AutomaticCounter(){
 		super();
 	}
 
 	/**
-	 *
+	 * Process all the Passenegers in its line. Randomly decides if a passenger group needs help
+	 * from an agent. If it does it calls a free agent over. If the passenger group does not only contain
+	 * Regular Passengers is removes them from the line and queues them at a regular counter.
 	 */
 	@Override
 	public void processPassengers() {

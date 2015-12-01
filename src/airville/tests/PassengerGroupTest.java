@@ -1,6 +1,8 @@
 package airville.tests;
 
+import airville.core.Player;
 import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.gamepieces.counters.RegularCounter;
 import airville.core.passengers.Passenger;
 import airville.core.passengers.PassengerGroup;
 import airville.core.passengers.PassengerType;
@@ -67,6 +69,16 @@ public class PassengerGroupTest {
 
     @Test
     public void testProcessAt() throws Exception {
+
+        int currentPoints = Player.getInstance().getPoints();
+        List<Passenger> passengers = new LinkedList<>();
+        for (int i = 0; i < 5; i++) {
+            passengers.add(new Passenger(false, PassengerType.REGULAR));
+        }
+        PassengerGroup group = new PassengerGroup(passengers);
+        group.processAt(new RegularCounter());
+        assertTrue(currentPoints + PassengerType.REGULAR.getPoints() * 5
+                == Player.getInstance().getPoints());
 
     }
 }
