@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * The Airport. This class is a singleton and holds information on all the game peices currently in the game.
  */
 public class Airport {
 
@@ -30,16 +30,17 @@ public class Airport {
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the single instance of the Airport.
+	 * @return The instance of the Airport.
 	 */
 	public static Airport getInstance(){
 		return instance;
 	}
 
 	/**
-	 *
-	 * @param gamePieceType
+	 * Adds a game piece to the correct list and game depending on what kind of type
+	 * piece it is.
+	 * @param gamePieceType The type of the game piece to be added.
 	 */
 	public void addItem(PurchasableGamePieceType gamePieceType){
 		switch (gamePieceType) {
@@ -59,47 +60,47 @@ public class Airport {
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns a random RegularCounter from the list of RegularCounters.
+	 * @return A Regular Counter.
 	 */
 	public RegularCounter getRandomRegularCounter(){
 		return (regularCounters.get((int) (Math.random() * regularCounters.size())));
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the list of Regular Counters.
+	 * @return A List of Regular Counters.
 	 */
 	public List<RegularCounter> getRegularCounters() {
 		return regularCounters;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the list of Automatic Counters.
+	 * @return A List of Automatic Counters.
 	 */
 	public List<AutomaticCounter> getAutomaticCounters() {
 		return automaticCounters;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the list of Agents.
+	 * @return A List of Agents.
 	 */
 	public List<Agent> getAgents() {
 		return agents;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the List of Supervisors.
+	 * @return A List of Supervisors.
 	 */
 	public List<Supervisor> getSupervisors(){
 		return supervisors;
 	}
 
 	/**
-	 *
+	 * Resets the contents of each list within the Airport.
 	 */
 	public void clearLists(){
 		regularCounters.clear();

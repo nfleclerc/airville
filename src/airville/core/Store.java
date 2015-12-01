@@ -3,7 +3,7 @@ package airville.core;
 import airville.core.gamepieces.PurchasableGamePieceType;
 
 /**
- *
+ * A singleton class that represents the Store where the Player can buy different items.
  */
 public class Store {
 
@@ -14,45 +14,49 @@ public class Store {
     }
 
     /**
-     *
-     * @return
+     * Returns an instance of the Store.
+     * @return An instance of the singleton Store.
      */
     public static Store getInstance(){
         return instance;
     }
 
     /**
-     *
+     * An Enum describing the type of currency to buy game pieces with.
      */
     public enum CurrencyType {
         DIAMONDS, POINTS
     }
 
     /**
-     *
+     * Buys a diamond from the Store. This is done with real money.
      */
     public void buyDiamond(){
         //prompt the user to enter credit card details and handle this elsewhere
     }
 
     /**
-     *
-     * @param gamePieceType
+     * Buys a game piece from the store and adds it to the game.
+     * @param gamePieceType The type of game piece to buy.
      */
     public void buyItem(PurchasableGamePieceType gamePieceType){
+        //add this item to the airport
         Airport.getInstance().addItem(gamePieceType);
+        //add this item to the player's count of it
         Player.getInstance().increaseCountOf(gamePieceType);
         if (PurchasableGamePieceType.SUPERVISOR == gamePieceType){
+            //if the type is a supervisor buy it in diamonds
             removeCurrency(CurrencyType.DIAMONDS, gamePieceType.getGamePieceCost());
         } else {
+            //otherwise buy it in points
             removeCurrency(CurrencyType.POINTS, gamePieceType.getGamePieceCost());
         }
     }
 
     /**
-     *
-     * @param currencyType
-     * @param cost
+     * Removes an amount of currency from the Player.
+     * @param currencyType The type of currency to remove from the Player. Can be diamonds or points.
+     * @param cost The amount of currency to remove from the player.
      */
     private void removeCurrency(CurrencyType currencyType, int cost){
         switch (currencyType){
