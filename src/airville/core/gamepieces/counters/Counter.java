@@ -49,13 +49,7 @@ public abstract class Counter implements GamePiece{
 		this.supervisor = supervisor;
 	}
 
-	/**
-	 * Sets how long this Counter will be busy for.
-	 * @param busyTime The amount of time that this Counter will be busy for.
-	 */
-	public void setBusyTime(double busyTime){
-		this.busyTime = busyTime;
-	}
+
 
 	/**
 	 * Returns true if this Counter has a Supervisor, false otherwise.
@@ -73,6 +67,11 @@ public abstract class Counter implements GamePiece{
 	@Override
 	public double getBusyTime(){
 		return this.busyTime;
+	}
+
+	@Override
+	public void setBusyTime(double busyTime){
+		this.busyTime = busyTime;
 	}
 
 }

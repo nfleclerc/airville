@@ -6,7 +6,8 @@ import airville.core.gamepieces.counters.RegularCounter;
 import java.util.function.Supplier;
 
 /**
- * Created by nathaniel on 11/22/15.
+ * An Enum representing a game peice that can be purchased. These are either an Agent, Supervisor,
+ * Automatic Counter, and Regular Counter.
  */
 public enum PurchasableGamePieceType {
 
@@ -24,16 +25,17 @@ public enum PurchasableGamePieceType {
     }
 
     /**
-     *
-     * @return
+     * Returns the constructor for the game piece.
+     * @return The constructor for this game piece.
      */
     public Supplier getConstructor(){
         return this.constructor;
     }
 
     /**
-     *
-     * @return
+     * How much this piece costs to buy from the store. All costs are in points, except
+     * for the Supervisor which costs diamonds.
+     * @return How much this piece costs to buy from the store.
      */
     public int getGamePieceCost(){
         return this.gamePieceCost;

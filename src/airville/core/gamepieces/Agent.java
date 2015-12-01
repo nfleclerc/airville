@@ -5,7 +5,7 @@ import airville.core.passengers.PassengerGroup;
 import airville.core.passengers.PassengerType;
 
 /**
- *
+ * An Agent walking around the Automatic Counters that can be called to help.
  */
 public class Agent implements GamePiece {
 
@@ -13,9 +13,11 @@ public class Agent implements GamePiece {
 	private double busyTime;
 
 	/**
-	 *
-	 * @param passengerGroupToHelp
-	 * @return
+	 * Static method that returns an agent that is willing to help a group of Passengers.
+	 * Removes the agent from the list of
+	 * free agents that is maintained in the Airport class.
+	 * @param passengerGroupToHelp The group of passengers this agent is going to help.
+	 * @return The Agent that is going to help the group.
 	 */
 	public static Agent callForAssistance(PassengerGroup passengerGroupToHelp){
 		//returns an agent and removes it from the pool of agents just floating around
@@ -26,36 +28,34 @@ public class Agent implements GamePiece {
 
 		Airport.getInstance().getAgents().remove(agent);
 		agent.busy = true;
-		agent.busyTime = passengerGroupToHelp.size() * PassengerType.REGULAR.getBusyTime();
+		agent.setBusyTime(passengerGroupToHelp.size() * PassengerType.REGULAR.getBusyTime());
 		return agent;
 	}
 
 	/**
-	 *
+	 * Tells the agent to leave the counter after helping the group. Adds an Agent
+	 * back to the list of free agents that is maintained by the Airport.
 	 */
 	public void leaveCounter(){
 		//the agent leaves the counter and returns to floating around
 		Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
-		busyTime = 0;
+		setBusyTime(0);
 		busy = false;
 	}
 
-	/**
-	 *
-	 * @return
-	 */
 	@Override
 	public boolean isBusy(){
 		return this.busy;
 	}
 
-	/**
-	 *
-	 * @return
-	 */
 	@Override
 	public double getBusyTime(){
 		return this.busyTime;
+	}
+
+	@Override
+	public void setBusyTime(double busyTime) {
+		this.busyTime = busyTime;
 	}
 
 }
