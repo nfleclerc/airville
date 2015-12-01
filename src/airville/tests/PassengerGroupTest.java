@@ -55,7 +55,6 @@ public class PassengerGroupTest {
         passengerList.add(new Passenger(false, PassengerType.REGULAR));
 
         //Structured Branch in which group is only one passenger
-        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
         PassengerGroup group = new PassengerGroup(passengerList);
         assertTrue(group.isOnePassenger());
 
@@ -63,7 +62,8 @@ public class PassengerGroupTest {
         //passengers
         passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
         group = new PassengerGroup(passengerList);
-        assertFalse(group.isOnePassenger());    }
+        assertFalse(group.isOnePassenger());
+    }
 
     @Test
     public void testProcessAt() throws Exception {

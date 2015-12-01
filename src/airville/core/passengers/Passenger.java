@@ -45,7 +45,7 @@ public class Passenger {
         if (passengerType == PassengerType.REROUTED){
             processReroutedPassenger(counter);
         } else {
-            Player.getInstance().addPoints(passengerType.getPoints());
+            processPassenger();
         }
         counter.setBusyTime(counter.getBusyTime() - passengerType.getBusyTime());
     }
@@ -56,9 +56,13 @@ public class Passenger {
      */
     private void processReroutedPassenger(Counter counter) {
         if (counter.hasSupervisor()){
-            Player.getInstance().addPoints(passengerType.getPoints());
+            processPassenger();
         } else {
             //pass this off to the real time team tbh
         }
+    }
+
+    private void processPassenger(){
+        Player.getInstance().addPoints(passengerType.getPoints());
     }
 }
