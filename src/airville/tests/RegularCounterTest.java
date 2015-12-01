@@ -42,7 +42,7 @@ public class RegularCounterTest {
     public void testProcessFrequentFlyers() throws Exception {
 
         //Structured Branch:
-        //test in which no passengers are frequent flyers
+        //test in which passengers are frequent flyers
         int currentPoints = Player.getInstance().getPoints();
         RegularCounter counter = new RegularCounter();
         List<Passenger> passengerList = new LinkedList<>();

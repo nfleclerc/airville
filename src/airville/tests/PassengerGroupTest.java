@@ -30,13 +30,40 @@ public class PassengerGroupTest {
 
     @Test
     public void testIsOfRegularPassengers() throws Exception {
+        List<Passenger> passengerList = new LinkedList<>();
+        for (int i = 0; i < 4; i++) {
+            passengerList.add(new Passenger(false, PassengerType.REGULAR));
+        }
 
+        //Structured Branch in which not all passengers are regular
+        //Also Edge Case in which only passenger is not regular and
+        //it is also the last passenger in the group
+        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
+        PassengerGroup group = new PassengerGroup(passengerList);
+        assertFalse(group.isOfRegularPassengers());
+
+        //Structured Branch in which all passengers are regular
+        passengerList.remove(passengerList.size() - 1);
+        group = new PassengerGroup(passengerList);
+        assertTrue(group.isOfRegularPassengers());
     }
 
     @Test
     public void testIsOnePassenger() throws Exception {
 
-    }
+        List<Passenger> passengerList = new LinkedList<>();
+        passengerList.add(new Passenger(false, PassengerType.REGULAR));
+
+        //Structured Branch in which group is only one passenger
+        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
+        PassengerGroup group = new PassengerGroup(passengerList);
+        assertTrue(group.isOnePassenger());
+
+        //Structured Branch in which there are multiple
+        //passengers
+        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
+        group = new PassengerGroup(passengerList);
+        assertFalse(group.isOnePassenger());    }
 
     @Test
     public void testProcessAt() throws Exception {
