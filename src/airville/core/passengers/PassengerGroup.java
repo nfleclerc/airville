@@ -26,7 +26,23 @@ public class PassengerGroup {
 	 */
 	public boolean isOfRegularPassengers(){
 		for (Passenger passenger : passengers){
+			//if a passenger is not regular return false immediately
 			if (passenger.getPassengerType() != PassengerType.REGULAR){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Returns true if every Passenger in this group is a frequent flyer, and
+	 * false otherwise.
+	 * @return Whether or not this group only consists of frequent flyers.
+	 */
+	public boolean isOfFrequentFlyers(){
+		for (Passenger passenger : passengers){
+			//if a passenger is not a frequent flyer return false immediately
+			if (!passenger.isFrequentFlyer()){
 				return false;
 			}
 		}

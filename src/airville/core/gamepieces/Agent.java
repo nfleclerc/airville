@@ -27,6 +27,7 @@ public class Agent implements GamePiece {
 						Airport.getInstance().getAgents().size()));
 
 		Airport.getInstance().getAgents().remove(agent);
+		//sets that agent to be busy
 		agent.busy = true;
 		agent.setBusyTime(passengerGroupToHelp.size() * PassengerType.REGULAR.getBusyTime());
 		return agent;

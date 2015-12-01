@@ -81,4 +81,25 @@ public class PassengerGroupTest {
                 == Player.getInstance().getPoints());
 
     }
+
+    @Test
+    public void testIsOfFrequentFlyers() throws Exception {
+        List<Passenger> passengerList = new LinkedList<>();
+        for (int i = 0; i < 4; i++) {
+            passengerList.add(new Passenger(true, PassengerType.REGULAR));
+        }
+
+        //Structured Branch in which not all passengers are freq flyers
+        //Also Edge Case in which only passenger is not a freq flyer and
+        //it is also the last passenger in the group
+        passengerList.add(new Passenger(false, PassengerType.REGULAR));
+        PassengerGroup group = new PassengerGroup(passengerList);
+        assertFalse(group.isOfFrequentFlyers());
+
+        //Structured Branch in which all passengers are regular
+        passengerList.remove(passengerList.size() - 1);
+        group = new PassengerGroup(passengerList);
+        assertFalse(group.isOfFrequentFlyers());
+
+    }
 }

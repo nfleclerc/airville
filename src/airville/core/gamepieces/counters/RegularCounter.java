@@ -6,8 +6,9 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * A Regular Counter that can process passengers. Passengers in this line can be of any type, and
- * Passengers that are alone and frequent flyers are always processed first.
+ * A Regular Counter that can process passengers. Passengers are always processed with
+ * their group. Passengers in this line can be of any type, and
+ * Passengers that are frequent flyers are processed first.
  */
 public class RegularCounter extends Counter {
 
@@ -19,16 +20,20 @@ public class RegularCounter extends Counter {
 	}
 
 	/**
-	 * Process all the Passengers in this line. Frequent flyers are always processed first
+	 * Process all the Passengers in this line. Frequent flyers are processed first
 	 * and passengers can be of any type.
 	 */
 	@Override
 	public void processPassengers() {
+		//this counter is busy and is processing passengers
 		busy = true;
+		//move all the frequent flyers to the head of the line
 		Queue<PassengerGroup> adjustedLine = moveFrequentFlyers();
+		//process all the passengers in the line
 		while (!adjustedLine.isEmpty()){
 			adjustedLine.poll().processAt(this);
 		}
+		//this counter is no longer busy
 		setBusyTime(0);
 		busy = false;
 	}
@@ -42,12 +47,17 @@ public class RegularCounter extends Counter {
 		Iterator iterator = getLine().iterator();
 		Queue<PassengerGroup> adjustedLine = new PriorityQueue<>();
 		while (iterator.hasNext()){
+			//iterate through the original group
 			PassengerGroup currentGroup = (PassengerGroup) iterator.next();
-			if (currentGroup.isOnePassenger() && currentGroup.getPassengers().get(0).isFrequentFlyer()){
+			if (currentGroup.isOfFrequentFlyers()){
+				//if the passenger is a frequent flyer add them into the new line
 				adjustedLine.add(currentGroup);
 			}
 		}
+		//add the remaining passengers into the line. all the frequent flyers
+		//will be at the front of the line
 		getLine().stream().forEach(passengerGroup -> adjustedLine.add(passengerGroup));
+		//remove the passengers from the original line and return the new queue
 		getLine().clear();
 		return adjustedLine;
 	}

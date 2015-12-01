@@ -47,12 +47,17 @@ public class Passenger {
      * @param counter
      */
     public void processAt(Counter counter){
+        //add this passengers busy time to the counter
         counter.setBusyTime(counter.getBusyTime() + passengerType.getBusyTime());
         if (passengerType == PassengerType.REROUTED){
+            //if this passenger is rerouted handle is specially
             processReroutedPassenger(counter);
         } else {
+            //otherwise process it as normal
             processPassenger();
         }
+        //this passenger has been processed and its busy time can
+        //be removed from the counter
         counter.setBusyTime(counter.getBusyTime() - passengerType.getBusyTime());
     }
 
@@ -64,9 +69,11 @@ public class Passenger {
     private void processReroutedPassenger(Counter counter) {
         assert this.getPassengerType() == PassengerType.REROUTED;
         if (counter.hasSupervisor()){
+            //the counter has a supervisor and this passenger
+            //can be processed normally
             processPassenger();
         } else {
-            //pass this off to the real time team tbh
+            //passing this off to the real time team tbh
         }
     }
 
