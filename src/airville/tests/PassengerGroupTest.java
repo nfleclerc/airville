@@ -25,6 +25,21 @@ public class PassengerGroupTest {
         AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
         //testing if all passengers are queued at the same counter
-        assertEquals(4, counter.getPassengersInLine().size());
+        assertEquals(4, counter.getLine().size());
+    }
+
+    @Test
+    public void testIsOfRegularPassengers() throws Exception {
+
+    }
+
+    @Test
+    public void testIsOnePassenger() throws Exception {
+
+    }
+
+    @Test
+    public void testProcessAt() throws Exception {
+
     }
 }

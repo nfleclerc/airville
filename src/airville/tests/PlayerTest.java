@@ -89,9 +89,4 @@ public class PlayerTest {
         assertTrue(0 == Player.getInstance().getDiamonds());
     }
 
-    @Test
-    public void testMoveSupervisor() throws Exception {
-        Supervisor supervisor = new Supervisor();
-        RegularCounter counter = new RegularCounter();
-    }
 }

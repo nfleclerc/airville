@@ -3,9 +3,13 @@ package airville.tests;
 import airville.core.Airport;
 import airville.core.gamepieces.Agent;
 import airville.core.gamepieces.PurchasableGamePieceType;
-import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.passengers.Passenger;
+import airville.core.passengers.PassengerGroup;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -23,7 +27,8 @@ public class AgentTest {
 
     @Test
     public void testCallForAssistanceAt() throws Exception {
-        Agent.callForAssistanceAt(new AutomaticCounter());
+        List<Passenger> passengers = new LinkedList<>();
+        Agent.callForAssistance(new PassengerGroup(passengers));
         assertTrue(Airport.getInstance().getAgents().isEmpty());
     }
 
@@ -36,7 +41,7 @@ public class AgentTest {
         Airport.getInstance().getAgents().remove(agent);
         //tells the agent to leave a counter and just go back to floating around
         //agent goes back in the list
-        agent.leaveCounter(new AutomaticCounter());
+        agent.leaveCounter();
         assertTrue(!Airport.getInstance().getAgents().isEmpty());
     }
 }

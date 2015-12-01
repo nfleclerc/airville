@@ -18,7 +18,7 @@ public class AirportTest {
     }
 
     @Test
-    public void testAddCounter() throws Exception {
+    public void testAddItem() throws Exception {
 
         //Structured Branch: Test if counter is automatic
         //makes sure counter is being added to the correct list
@@ -32,4 +32,5 @@ public class AirportTest {
 
 
     }
+
 }

@@ -25,13 +25,15 @@ public class AutomaticCounterTest {
         int currentPoints = Player.getInstance().getPoints();
         Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
         AutomaticCounter counter = new AutomaticCounter();
-        for (int i = 0; i < 5; i++) {
-            AbstractPassenger.make(PassengerType.REGULAR, false).queueAt(counter);
-        }
-        assertEquals(5, counter.getPassengersInLine().size());
+        List<Passenger> passengerList = new LinkedList<>();
+
+        passengerList.add(new Passenger(false, PassengerType.REGULAR));
+        PassengerGroup group = new PassengerGroup(passengerList);
+        group.queueAt(counter);
+        assertEquals(1, counter.getLine().size());
         counter.processPassengers();
-        assertEquals(0, counter.getPassengersInLine().size());
-        assertEquals(currentPoints + RegularPassenger.getPointValue() * 5,
+        assertEquals(0, counter.getLine().size());
+        assertEquals(currentPoints + PassengerType.REGULAR.getPoints() * 1,
                 Player.getInstance().getPoints());
 
     }
@@ -43,12 +45,15 @@ public class AutomaticCounterTest {
         int currentPoints = Player.getInstance().getPoints();
         Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
         AutomaticCounter counter = new AutomaticCounter();
-        for (int i = 0; i < 3; i++) {
-            AbstractPassenger.make(PassengerType.EXTRABAGGAGE, false).queueAt(counter);
-        }
-        assertEquals(3, counter.getPassengersInLine().size());
+        List<Passenger> passengerList = new LinkedList<>();
+
+        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
+
+        PassengerGroup group = new PassengerGroup(passengerList);
+        group.queueAt(counter);
+        assertEquals(1, counter.getLine().size());
         counter.processPassengers();
-        assertEquals(0, counter.getPassengersInLine().size());
+        assertEquals(0, counter.getLine().size());
         //no points should be added since they should have all been queued at another counter
         //instead of being processed
         assertEquals(currentPoints,
@@ -68,18 +73,18 @@ public class AutomaticCounterTest {
 
         //set up the passenger group
         for (int i = 0; i < 3; i++) {
-            passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+            passengerList.add(new Passenger(false, PassengerType.REGULAR));
         }
         PassengerGroup group = new PassengerGroup(passengerList);
         AutomaticCounter counter = new AutomaticCounter();
         group.queueAt(counter);
 
-        assertEquals(3, counter.getPassengersInLine().size());
+        assertEquals(3, counter.getLine().size());
         counter.processPassengers();
-        assertEquals(0, counter.getPassengersInLine().size());
+        assertEquals(0, counter.getLine().size());
         //these passengers should all be processed normally so points
         //should be awarded
-        assertEquals(currentPoints + RegularPassenger.getPointValue() * 3,
+        assertEquals(currentPoints + PassengerType.REGULAR.getPoints() * 3,
                 Player.getInstance().getPoints());
 
     }
@@ -94,17 +99,17 @@ public class AutomaticCounterTest {
         Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
         List<Passenger> passengerList = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            passengerList.add(AbstractPassenger.make(PassengerType.REGULAR, false));
+            passengerList.add(new Passenger(false, PassengerType.REGULAR));
         }
         //add the non regular passenger to the list
-        passengerList.add(AbstractPassenger.make(PassengerType.EXTRABAGGAGE, false));
+        passengerList.add(new Passenger(false, PassengerType.OVERBOOKED));
         PassengerGroup group = new PassengerGroup(passengerList);
         AutomaticCounter counter = new AutomaticCounter();
 
         group.queueAt(counter);
-        assertEquals(4, counter.getPassengersInLine().size());
+        assertEquals(4, counter.getLine().size());
         counter.processPassengers();
-        assertEquals(0, counter.getPassengersInLine().size());
+        assertEquals(0, counter.getLine().size());
         //these passengers should all be requeued at another line so no
         //points should be awarded yet
         assertEquals(currentPoints,
