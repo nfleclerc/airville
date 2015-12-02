@@ -28,11 +28,14 @@ public class RegularCounter extends Counter {
 	public void processPassengers() {
 		//this counter is busy and is processing passengers
 		busy = true;
-		//move all the frequent flyers to the head of the line
-		Queue<PassengerGroup> adjustedLine = moveFrequentFlyers();
-		//process all the passengers in the line
-		while (!adjustedLine.isEmpty()){
-			adjustedLine.poll().processAt(this);
+		//process while there are still passengers in the list
+		while (!getLine().isEmpty()) {
+			//move all the frequent flyers to the head of the line
+			Queue<PassengerGroup> adjustedLine = moveFrequentFlyers();
+			//process all the passengers in the new line
+			while (!adjustedLine.isEmpty()) {
+				adjustedLine.poll().processAt(this);
+			}
 		}
 		//this counter is no longer busy
 		setBusyTime(0);

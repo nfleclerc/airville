@@ -65,6 +65,14 @@ public class Airport {
 	}
 
 	/**
+	 * Returns a random AutomaticCounter from the list of AutomaticCounters.
+	 * @return An AutomaticCounter.
+	 */
+	public AutomaticCounter getRandomAutomaticCounter(){
+		return (automaticCounters.get((int) (Math.random() * automaticCounters.size())));
+	}
+
+	/**
 	 * Returns the list of Regular Counters.
 	 * @return A List of Regular Counters.
 	 */
