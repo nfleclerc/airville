@@ -14,7 +14,7 @@ public class SupervisorTest {
 
     /**
      * Tests the speedUp() routine in Supervisor.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testSpeedUp() throws Exception {
@@ -27,7 +27,7 @@ public class SupervisorTest {
 
     /**
      * Tests the slowDown() routine in Supervisor.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testSlowDown() throws Exception {

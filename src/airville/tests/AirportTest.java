@@ -26,7 +26,7 @@ public class AirportTest {
     /**
      * Tests the addItem() routine of Airport. Tests adding an Automatic Counter,
      * Regular Counter, Supervisor, and Agent
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testAddItem() throws Exception {

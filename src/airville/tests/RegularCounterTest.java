@@ -29,7 +29,7 @@ public class RegularCounterTest {
     /**
      * Tests the processPassengers() routine in RegularCounter in which none
      * of the passengers are frequent flyers.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessPassengers() throws Exception {
@@ -55,7 +55,7 @@ public class RegularCounterTest {
     /**
      * Tests the processPassengers() routine in RegularCounter in which all
      * of the passengers are frequent flyers.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessFrequentFlyers() throws Exception {

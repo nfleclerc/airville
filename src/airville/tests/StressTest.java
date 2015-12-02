@@ -27,7 +27,7 @@ public class StressTest {
     /**
      * Conducts the stress test on the whole code base. Queues 40000 groups to different counters.
      * Makes sure the resulting number of points is the correct amount.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void stressTest() throws Exception{
@@ -39,7 +39,6 @@ public class StressTest {
         }
         airport.getAutomaticCounters().forEach(Counter::processPassengers);
         airport.getRegularCounters().forEach(Counter::processPassengers);
-        System.out.print(Player.getInstance().getPoints());
         assertTrue(44_000_000 == player.getPoints());
         assertAllAreNotBusy();
     }
@@ -47,7 +46,7 @@ public class StressTest {
     /**
      * Asserts that each game piece used is no longer busy and all queues
      * are empty i.e. all passengers have been processed.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     private void assertAllAreNotBusy() throws Exception{
         for (Counter counter : airport.getAutomaticCounters()){

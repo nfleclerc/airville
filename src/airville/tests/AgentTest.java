@@ -29,7 +29,7 @@ public class AgentTest {
 
     /**
      * Tests the callForAssistance() routine of Agent.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testCallForAssistanceAt() throws Exception {
@@ -40,7 +40,7 @@ public class AgentTest {
 
     /**
      * Tests the leaveCounter() routine of Agent.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testLeaveCounter() throws Exception {

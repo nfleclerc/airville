@@ -26,7 +26,7 @@ public class StoreTest {
     /**
      * Tests the buyItem() routine in Store in which an AutomaticCounter is being
      * purchased.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testBuyAutomaticCounter() throws Exception {
@@ -42,7 +42,7 @@ public class StoreTest {
     /**
      * Tests the buyItem() routine in Store in which a RegularCounter is being
      * purchased.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */    @Test
     public void testBuyRegularCounter() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
@@ -57,7 +57,7 @@ public class StoreTest {
     /**
      * Tests the buyItem() routine in Store in which an Agent is being
      * purchased.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */    @Test
     public void testBuyAgent() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
@@ -72,7 +72,7 @@ public class StoreTest {
     /**
      * Tests the buyItem() routine in Store in which a Supervisor is being
      * purchased.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */    @Test
     public void testBuySupervisor() throws Exception {
         int diamonds = Player.getInstance().getDiamonds();

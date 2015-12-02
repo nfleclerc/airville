@@ -19,7 +19,7 @@ public class PassengerGroupTest {
 
     /**
      * Test the queueAt() routine in PassengerGroup.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testQueueAt() throws Exception {
@@ -36,7 +36,7 @@ public class PassengerGroupTest {
 
     /**
      * Test the isOfRegularPassengers() routine in PassengerGroup.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testIsOfRegularPassengers() throws Exception {
@@ -60,7 +60,7 @@ public class PassengerGroupTest {
 
     /**
      * Tests the isOnePassenger() routine in PassengerGroup.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testIsOnePassenger() throws Exception {
@@ -81,7 +81,7 @@ public class PassengerGroupTest {
 
     /**
      * Tests the processAt() routine in PassengerGroup.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessAt() throws Exception {
@@ -100,7 +100,7 @@ public class PassengerGroupTest {
 
     /**
      * Tests the isOfFrequentFlyers() routine in PassengerGroup.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testIsOfFrequentFlyers() throws Exception {

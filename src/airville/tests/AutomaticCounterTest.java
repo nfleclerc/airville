@@ -31,7 +31,7 @@ public class AutomaticCounterTest {
     /**
      * Tests the processPassenger() method with the case in which a passenger is
      * by themself and Regular.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessRegularPassengers() throws Exception {
@@ -57,7 +57,7 @@ public class AutomaticCounterTest {
     /**
      * Tests the processPassenger() method with the case in which a passenger is
      * by themself but is not Regular.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessNonRegularPassengers() throws Exception {
@@ -85,10 +85,10 @@ public class AutomaticCounterTest {
     /**
      * Tests the processPassenger() method with the case in which a passenger is not
      * by themself and Regular.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
-    public void testProcessPassengersInGroups(){
+    public void testProcessPassengersInGroups() throws Exception{
         //Structured Branch:
         //test in which passengers are in a group but they
         //are all regular
@@ -118,10 +118,10 @@ public class AutomaticCounterTest {
     /**
      * Tests the processPassenger() method with the case in which a passenger is not
      * by themself and one in the group is not Regular.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
-    public void testProcessPassengersInGroupsWithASpecialPassenger(){
+    public void testProcessPassengersInGroupsWithASpecialPassenger() throws Exception{
         //Structured Branch:
         //test in which passengers are in a group but one
         //member is not regular

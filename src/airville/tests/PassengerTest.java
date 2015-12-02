@@ -29,7 +29,7 @@ public class PassengerTest {
 
     /**
      * Tests the processAt() routine in Passenger in which the Passenger is Regular.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessAtRegular() throws Exception {
@@ -41,7 +41,7 @@ public class PassengerTest {
 
     /**
      * Tests the processAt() routine in Passenger in which the Passenger has Extra Baggage.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */    @Test
     public void testProcessAtExtraBaggage() throws Exception {
         int currentPoints = player.getPoints();
@@ -52,7 +52,7 @@ public class PassengerTest {
 
     /**
      * Tests the processAt() routine in Passenger in which the Passenger is Overbooked.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessAtOverbooked() throws Exception {
@@ -64,7 +64,7 @@ public class PassengerTest {
 
     /**
      * Tests the processAt() routine in Passenger in which the Passenger is Rerouted.
-     * @throws Exception
+     * @throws Exception An exception indicating this test case has failed.
      */
     @Test
     public void testProcessAtRerouted() throws Exception {
