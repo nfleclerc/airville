@@ -44,5 +44,12 @@ public enum GamePieceType {
         this.buyFunction.accept(this.cost);
     }
 
-
+    /**
+     * The cost to purchase this game piece. This amount is given in diamonds for Supervisors,
+     * and points for all other game piece types.
+     * @return The amount is costs to purchase this game piece.
+     */
+    public int getCost() {
+        return cost;
+    }
 }
