@@ -23,4 +23,9 @@ public interface GamePiece {
      */
     void setBusyTime(double busyTime);
 
+    /**
+     * Returns an Enum describing the type of game piece this is.
+     * @return The type of game piece this is.
+     */
+    GamePieceType getGamePieceType();
 }

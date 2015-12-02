@@ -2,7 +2,6 @@ package airville.tests;
 
 import airville.core.Airport;
 import airville.core.gamepieces.Agent;
-import airville.core.gamepieces.PurchasableGamePieceType;
 import airville.core.passengers.Passenger;
 import airville.core.passengers.PassengerGroup;
 import org.junit.Before;
@@ -22,7 +21,7 @@ public class AgentTest {
     @Before
     public void clearLists(){
         Airport.getInstance().clearLists();
-        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        Airport.getInstance().addItem(new Agent());
     }
 
     @Test

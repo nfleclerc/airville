@@ -39,7 +39,7 @@ public class Agent implements GamePiece {
 	 */
 	public void leaveCounter(){
 		//the agent leaves the counter and returns to floating around
-		Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+		Airport.getInstance().addItem(this);
 		setBusyTime(0);
 		busy = false;
 	}
@@ -57,6 +57,11 @@ public class Agent implements GamePiece {
 	@Override
 	public void setBusyTime(double busyTime) {
 		this.busyTime = busyTime;
+	}
+
+	@Override
+	public GamePieceType getGamePieceType() {
+		return GamePieceType.AGENT;
 	}
 
 }

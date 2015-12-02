@@ -2,6 +2,8 @@ package airville.core.gamepieces.counters;
 
 import airville.core.Airport;
 import airville.core.gamepieces.Agent;
+import airville.core.gamepieces.GamePieceType;
+
 import java.util.Optional;
 
 /**
@@ -60,4 +62,9 @@ public class AutomaticCounter extends Counter {
 		busy = false;
 	}
 
+
+	@Override
+	public GamePieceType getGamePieceType() {
+		return GamePieceType.AUTO_COUNTER;
+	}
 }

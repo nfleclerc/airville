@@ -2,8 +2,9 @@ package airville.tests;
 
 import airville.core.Airport;
 import airville.core.Player;
-import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.Agent;
 import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.gamepieces.counters.RegularCounter;
 import airville.core.passengers.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class AutomaticCounterTest {
         //Structured Branch:
         //test in which all passengers are Regular and are not in a group
         int currentPoints = Player.getInstance().getPoints();
-        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        Airport.getInstance().addItem(new Agent());
         AutomaticCounter counter = new AutomaticCounter();
         List<Passenger> passengerList = new LinkedList<>();
 
@@ -50,7 +51,7 @@ public class AutomaticCounterTest {
         //Structured Branch:
         //test in which passengers are not Regular and not in group
         int currentPoints = Player.getInstance().getPoints();
-        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
+        Airport.getInstance().addItem(new RegularCounter());
         AutomaticCounter counter = new AutomaticCounter();
         List<Passenger> passengerList = new LinkedList<>();
 
@@ -74,8 +75,8 @@ public class AutomaticCounterTest {
         //test in which passengers are in a group but they
         //are all regular
         int currentPoints = Player.getInstance().getPoints();
-        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
-        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        Airport.getInstance().addItem(new RegularCounter());
+        Airport.getInstance().addItem(new Agent());
         List<Passenger> passengerList = new LinkedList<>();
 
         //set up the passenger group
@@ -102,8 +103,8 @@ public class AutomaticCounterTest {
         //test in which passengers are in a group but one
         //member is not regular
         int currentPoints = Player.getInstance().getPoints();
-        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
-        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        Airport.getInstance().addItem(new RegularCounter());
+        Airport.getInstance().addItem(new Agent());
         List<Passenger> passengerList = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
             passengerList.add(new Passenger(false, PassengerType.REGULAR));

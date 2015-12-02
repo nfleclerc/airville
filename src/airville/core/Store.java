@@ -1,6 +1,6 @@
 package airville.core;
 
-import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.GamePieceType;
 
 /**
  * A singleton class that represents the Store where the Player can buy different items.
@@ -36,21 +36,16 @@ public class Store {
     }
 
     /**
-     * Buys a game piece from the store and adds it to the game.
+     * Buys a game piece from the store and adds it to the game qnd increases
+     * the Player's count of that item.
      * @param gamePieceType The type of game piece to buy.
      */
-    public void buyItem(PurchasableGamePieceType gamePieceType){
+    public void buyItem(GamePieceType gamePieceType){
         //add this item to the airport
-        Airport.getInstance().addItem(gamePieceType);
+        Airport.getInstance().addItem(gamePieceType.getConstructor().get());
         //add this item to the player's count of it
         Player.getInstance().increaseCountOf(gamePieceType);
-        if (PurchasableGamePieceType.SUPERVISOR == gamePieceType){
-            //if the type is a supervisor buy it in diamonds
-            removeCurrency(CurrencyType.DIAMONDS, gamePieceType.getGamePieceCost());
-        } else {
-            //otherwise buy it in points
-            removeCurrency(CurrencyType.POINTS, gamePieceType.getGamePieceCost());
-        }
+        gamePieceType.buy();
     }
 
     /**

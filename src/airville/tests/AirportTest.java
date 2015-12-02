@@ -1,7 +1,10 @@
 package airville.tests;
 
 import airville.core.Airport;
-import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.Agent;
+import airville.core.gamepieces.Supervisor;
+import airville.core.gamepieces.counters.AutomaticCounter;
+import airville.core.gamepieces.counters.RegularCounter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,20 +25,20 @@ public class AirportTest {
 
         //Structured Branch: Test if counter is automatic
         //makes sure counter is being added to the correct list
-        Airport.getInstance().addItem(PurchasableGamePieceType.AUTO_COUNTER);
+        Airport.getInstance().addItem(new AutomaticCounter());
         assertTrue(!Airport.getInstance().getAutomaticCounters().isEmpty());
 
         //Structured Branch: Test if counter is regular
         //sees if a counter is being added to the correct list
-        Airport.getInstance().addItem(PurchasableGamePieceType.REG_COUNTER);
+        Airport.getInstance().addItem(new RegularCounter());
         assertTrue(!Airport.getInstance().getRegularCounters().isEmpty());
 
         //Structured Branch: Test if supervisor is being added to correct list
-        Airport.getInstance().addItem(PurchasableGamePieceType.SUPERVISOR);
+        Airport.getInstance().addItem(new Supervisor());
         assertTrue(!Airport.getInstance().getSupervisors().isEmpty());
 
         //Structured Branch: Test is agent is being added to correct list
-        Airport.getInstance().addItem(PurchasableGamePieceType.AGENT);
+        Airport.getInstance().addItem(new Agent());
         assertTrue(!Airport.getInstance().getAgents().isEmpty());
 
 

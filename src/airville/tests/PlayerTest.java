@@ -1,9 +1,7 @@
 package airville.tests;
 
 import airville.core.Player;
-import airville.core.gamepieces.PurchasableGamePieceType;
-import airville.core.gamepieces.counters.RegularCounter;
-import airville.core.gamepieces.Supervisor;
+import airville.core.gamepieces.GamePieceType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,7 +44,7 @@ public class PlayerTest {
     @Test
     public void testAddRegularCounter() throws Exception {
         int currentRegCounters = Player.getInstance().getNumberOfRegularCounters();
-        Player.getInstance().increaseCountOf(PurchasableGamePieceType.REG_COUNTER);
+        Player.getInstance().increaseCountOf(GamePieceType.REG_COUNTER);
         assertTrue(currentRegCounters + 1 ==
                 Player.getInstance().getNumberOfRegularCounters());
     }
@@ -54,7 +52,7 @@ public class PlayerTest {
     @Test
     public void testAddAutomaticCounter() throws Exception {
         int currentAutoCounters = Player.getInstance().getNumberOfAutoCounters();
-        Player.getInstance().increaseCountOf(PurchasableGamePieceType.AUTO_COUNTER);
+        Player.getInstance().increaseCountOf(GamePieceType.AUTO_COUNTER);
         assertTrue(currentAutoCounters + 1 ==
                 Player.getInstance().getNumberOfAutoCounters());
     }
@@ -62,7 +60,7 @@ public class PlayerTest {
     @Test
     public void testAddAgent() throws Exception {
         int currentAgentCount = Player.getInstance().getNumberOfAgents();
-        Player.getInstance().increaseCountOf(PurchasableGamePieceType.AGENT);
+        Player.getInstance().increaseCountOf(GamePieceType.AGENT);
         assertTrue(currentAgentCount + 1 ==
                 Player.getInstance().getNumberOfAgents());
     }
@@ -70,7 +68,7 @@ public class PlayerTest {
     @Test
     public void testAddSupervisor() throws Exception {
         int currentSupervisorCount = Player.getInstance().getNumberOfSupervisors();
-        Player.getInstance().increaseCountOf(PurchasableGamePieceType.SUPERVISOR);
+        Player.getInstance().increaseCountOf(GamePieceType.SUPERVISOR);
         assertTrue(currentSupervisorCount + 1 ==
                 Player.getInstance().getNumberOfSupervisors());
     }

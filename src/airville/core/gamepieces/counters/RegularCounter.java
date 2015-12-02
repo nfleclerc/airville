@@ -1,5 +1,6 @@
 package airville.core.gamepieces.counters;
 
+import airville.core.gamepieces.GamePieceType;
 import airville.core.passengers.PassengerGroup;
 import java.util.Iterator;
 import java.util.PriorityQueue;
@@ -62,6 +63,11 @@ public class RegularCounter extends Counter {
 		//remove the passengers from the original line and return the new queue
 		getLine().clear();
 		return adjustedLine;
+	}
+
+	@Override
+	public GamePieceType getGamePieceType() {
+		return GamePieceType.REG_COUNTER;
 	}
 }
 

@@ -1,6 +1,6 @@
 package airville.core;
 
-import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.GamePieceType;
 import airville.core.gamepieces.Supervisor;
 import airville.core.gamepieces.counters.Counter;
 
@@ -76,7 +76,7 @@ public class Player {
 	 * without the Player having to restart.
 	 * @param gamePieceType The type of game piece to add to the Player's count of.
 	 */
-	public void increaseCountOf(PurchasableGamePieceType gamePieceType){
+	public void increaseCountOf(GamePieceType gamePieceType){
 		switch (gamePieceType) {
 			case AGENT:
 				this.numberOfAgents++;

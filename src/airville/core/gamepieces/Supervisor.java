@@ -63,4 +63,9 @@ public class Supervisor implements GamePiece {
 		this.busyTime = busyTime;
 	}
 
+	@Override
+	public GamePieceType getGamePieceType() {
+		return GamePieceType.SUPERVISOR;
+	}
+
 }

@@ -1,7 +1,7 @@
 package airville.core;
 
 import airville.core.gamepieces.Agent;
-import airville.core.gamepieces.PurchasableGamePieceType;
+import airville.core.gamepieces.GamePiece;
 import airville.core.gamepieces.Supervisor;
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.gamepieces.counters.RegularCounter;
@@ -40,21 +40,21 @@ public class Airport {
 	/**
 	 * Adds a game piece to the correct list and game depending on what kind of type
 	 * piece it is.
-	 * @param gamePieceType The type of the game piece to be added.
+	 * @param gamePiece The type of the game piece to be added.
 	 */
-	public void addItem(PurchasableGamePieceType gamePieceType){
-		switch (gamePieceType) {
+	public void addItem(GamePiece gamePiece){
+		switch (gamePiece.getGamePieceType()) {
 			case AGENT:
-				agents.add((Agent) gamePieceType.getConstructor().get());
+				agents.add((Agent) gamePiece);
 				break;
 			case SUPERVISOR:
-				supervisors.add((Supervisor) gamePieceType.getConstructor().get());
+				supervisors.add((Supervisor) gamePiece);
 				break;
 			case REG_COUNTER:
-				regularCounters.add((RegularCounter) gamePieceType.getConstructor().get());
+				regularCounters.add((RegularCounter) gamePiece);
 				break;
 			case AUTO_COUNTER:
-				automaticCounters.add((AutomaticCounter) gamePieceType.getConstructor().get());
+				automaticCounters.add((AutomaticCounter) gamePiece);
 				break;
 		}
 	}
