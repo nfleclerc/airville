@@ -28,7 +28,7 @@ public class Agent implements GamePiece {
 
 		Airport.getInstance().getAgents().remove(agent);
 		//sets that agent to be busy
-		agent.busy = true;
+		agent.setBusy();
 		agent.setBusyTime(passengerGroupToHelp.size() * PassengerType.REGULAR.getBusyTime());
 		return agent;
 	}
@@ -41,7 +41,7 @@ public class Agent implements GamePiece {
 		//the agent leaves the counter and returns to floating around
 		Airport.getInstance().addItem(this);
 		setBusyTime(0);
-		busy = false;
+		setFree();
 	}
 
 	@Override
@@ -62,6 +62,16 @@ public class Agent implements GamePiece {
 	@Override
 	public GamePieceType getGamePieceType() {
 		return GamePieceType.AGENT;
+	}
+
+	@Override
+	public void setBusy(){
+		this.busy = true;
+	}
+
+	@Override
+	public void setFree(){
+		this.busy = false;
 	}
 
 }

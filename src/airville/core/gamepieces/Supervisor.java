@@ -19,8 +19,8 @@ public class Supervisor implements GamePiece {
  	 * @param counter The Counter at which the speed buff is to be applied.
 	 */
 	public void speedUp(Counter counter){
-		busy = true;
 		counter.setBusyTime(counter.getBusyTime() / SUPERVISOR_SPEEDUP_RATE);
+		setBusy();
 	}
 
 	/**
@@ -30,6 +30,7 @@ public class Supervisor implements GamePiece {
 	 */
 	public void slowDown(Counter counter){
 		counter.setBusyTime(counter.getBusyTime() * SUPERVISOR_SPEEDUP_RATE);
+		setFree();
 	}
 
 	/**
@@ -66,6 +67,16 @@ public class Supervisor implements GamePiece {
 	@Override
 	public GamePieceType getGamePieceType() {
 		return GamePieceType.SUPERVISOR;
+	}
+
+	@Override
+	public void setBusy(){
+		this.busy = true;
+	}
+
+	@Override
+	public void setFree(){
+		this.busy = false;
 	}
 
 }

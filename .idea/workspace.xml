@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="572a89fb-f862-462e-b07d-d458c54c60f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/AgentTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/AgentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/AirportTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/AirportTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/AutomaticCounterTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/AutomaticCounterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/PassengerGroupTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/PassengerGroupTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/PassengerTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/PassengerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/PlayerTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/PlayerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/RegularCounterTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/RegularCounterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/StoreTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/StoreTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/StressTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/StressTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/tests/SupervisorTest.java" afterPath="$PROJECT_DIR$/src/airville/tests/SupervisorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java" afterPath="$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="87d775ef-6f1f-4acb-a52c-fbed2a512c52" name="Failed commit: Default" comment="minor changes and renamed all files with caps" />
@@ -37,30 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AutomaticCounterTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/AutomaticCounterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PassengerGroupTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/PassengerGroupTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GamePieceType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/GamePieceType.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,59 +46,104 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePiece.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Supervisor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44055945">
+              <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1263#1264#0" expanded="true" />
+                <element signature="e#1297#1298#0" expanded="true" />
+                <element signature="e#1878#1879#0" expanded="true" />
+                <element signature="e#1901#1902#0" expanded="true" />
+                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="e#1961#1962#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutomaticCounter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegularCounter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePiece.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6993007">
-              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PassengerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/PassengerTest.java">
+      <file leaf-file-name="Counter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="84" selection-start-line="65" selection-start-column="84" selection-end-line="65" selection-end-column="84" />
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1118#1119#0" expanded="true" />
+                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1339#1340#0" expanded="true" />
+                <element signature="e#1823#1824#0" expanded="true" />
+                <element signature="e#1859#1860#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/PlayerTest.java">
+      <file leaf-file-name="Agent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegularCounterTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/RegularCounterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="75" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoreTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/StoreTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1590#1591#0" expanded="true" />
+                <element signature="e#1613#1614#0" expanded="true" />
+                <element signature="e#1655#1656#0" expanded="true" />
+                <element signature="e#1682#1683#0" expanded="true" />
+                <element signature="e#1893#1894#0" expanded="true" />
+                <element signature="e#1916#1917#0" expanded="true" />
+                <element signature="e#1952#1953#0" expanded="true" />
+                <element signature="e#1976#1977#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,19 +153,25 @@
         <entry file="file://$PROJECT_DIR$/src/airville/tests/StressTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-              <folding />
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SupervisorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/airville/tests/SupervisorTest.java">
+      <file leaf-file-name="Airport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/airville/core/Airport.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1008#1009#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#2720#2721#0" expanded="true" />
+                <element signature="e#2745#2746#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,19 +228,11 @@
         <option value="$PROJECT_DIR$/src/tests/FloatingAgentTest.java" />
         <option value="$PROJECT_DIR$/src/airville/core/passengers/PassengerType.java" />
         <option value="$PROJECT_DIR$/src/airville/core/gamepieces/PurchasableGamePieceType.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/Player.java" />
         <option value="$PROJECT_DIR$/src/airville/core/Store.java" />
         <option value="$PROJECT_DIR$/src/airville/core/passengers/PassengerGroup.java" />
         <option value="$PROJECT_DIR$/src/airville/core/passengers/Passenger.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java" />
         <option value="$PROJECT_DIR$/src/airville/core/gamepieces/GamePieceType.java" />
         <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/src/airville/core/Airport.java" />
-        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/AgentTest.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/AirportTest.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/AutomaticCounterTest.java" />
@@ -226,7 +242,15 @@
         <option value="$PROJECT_DIR$/src/airville/tests/RegularCounterTest.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/StoreTest.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/SupervisorTest.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/Player.java" />
         <option value="$PROJECT_DIR$/src/airville/tests/StressTest.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/Airport.java" />
+        <option value="$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java" />
       </list>
     </option>
   </component>
@@ -807,7 +831,7 @@
       <updated>1447647873093</updated>
       <workItem from="1447647875139" duration="2905000" />
       <workItem from="1447651279266" duration="42000" />
-      <workItem from="1448239226137" duration="55877000" />
+      <workItem from="1448239226137" duration="57824000" />
     </task>
     <task id="LOCAL-00001" summary="minor git issues testing if this will work">
       <created>1447650537553</created>
@@ -989,11 +1013,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449027702026</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added javadoc comments for all test classes">
+      <created>1449033807067</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1449033807067</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58824000" />
+    <option name="totallyTimeSpent" value="60771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1280" height="773" extended-state="0" />
@@ -1037,7 +1067,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="moved to a new structure with packages" />
     <MESSAGE value="rewrote the algorithm for the automated counter and still working on regular counter" />
     <MESSAGE value="added regular counter processing algorithm" />
     <MESSAGE value="added optionals throughout the code" />
@@ -1062,7 +1091,8 @@
     <MESSAGE value="added store test" />
     <MESSAGE value="added doc task to buildfile" />
     <MESSAGE value="added stress test and all tests are passing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stress test and all tests are passing" />
+    <MESSAGE value="added javadoc comments for all test classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc comments for all test classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1118,85 +1148,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6293706">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/Airport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3986014">
-          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1793#1794#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/core/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1282,14 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/airville/tests/StressTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/airville/tests/PassengerGroupTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1310,11 +1258,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/AutomaticCounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+            <element signature="e#1613#1614#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/GamePiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6993007">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/Counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+            <element signature="e#1823#1824#0" expanded="true" />
+            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/tests/StressTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/Airport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+            <element signature="e#2745#2746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/counters/RegularCounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airville/core/gamepieces/Supervisor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44055945">
+          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1263#1264#0" expanded="true" />
+            <element signature="e#1297#1298#0" expanded="true" />
+            <element signature="e#1878#1879#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

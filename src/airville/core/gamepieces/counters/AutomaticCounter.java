@@ -30,7 +30,7 @@ public class AutomaticCounter extends Counter {
 	@Override
 	public void processPassengers() {
 		//this counter is busy
-		busy = true;
+		setBusy();
 		while (!getLine().isEmpty()){
 			//process the passengers while there are still passengers in this line
 			if (getLine().peek().isOfRegularPassengers()){
@@ -59,7 +59,7 @@ public class AutomaticCounter extends Counter {
 		}
 		//this counter is no longer busy
 		setBusyTime(0);
-		busy = false;
+		setFree();
 	}
 
 

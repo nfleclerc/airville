@@ -3,7 +3,6 @@ package airville.tests;
 import airville.core.Airport;
 import airville.core.Player;
 import airville.core.gamepieces.Agent;
-import airville.core.gamepieces.Supervisor;
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.gamepieces.counters.Counter;
 import airville.core.gamepieces.counters.RegularCounter;
@@ -32,12 +31,15 @@ public class StressTest {
      */
     @Test
     public void stressTest() throws Exception{
+        player.resetCurrencies();
+        airport.clearLists();
         initializeGame();
         for (int i = 0; i < 10000; i++) {
             queuePassengers();
         }
         airport.getAutomaticCounters().forEach(Counter::processPassengers);
         airport.getRegularCounters().forEach(Counter::processPassengers);
+        System.out.print(Player.getInstance().getPoints());
         assertTrue(44_000_000 == player.getPoints());
         assertAllAreNotBusy();
     }
@@ -99,10 +101,6 @@ public class StressTest {
 
         for (int i = 0; i < player.getNumberOfAgents(); i++) {
             airport.addItem(new Agent());
-        }
-
-        for (int i = 0; i < player.getNumberOfSupervisors(); i++) {
-            airport.addItem(new Supervisor());
         }
 
     }

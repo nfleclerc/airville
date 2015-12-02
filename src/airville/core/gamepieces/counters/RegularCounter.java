@@ -27,7 +27,7 @@ public class RegularCounter extends Counter {
 	@Override
 	public void processPassengers() {
 		//this counter is busy and is processing passengers
-		busy = true;
+		setBusy();
 		//process while there are still passengers in the list
 		while (!getLine().isEmpty()) {
 			//move all the frequent flyers to the head of the line
@@ -39,7 +39,7 @@ public class RegularCounter extends Counter {
 		}
 		//this counter is no longer busy
 		setBusyTime(0);
-		busy = false;
+		setFree();
 	}
 
 	/**

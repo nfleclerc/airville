@@ -18,6 +18,16 @@ public interface GamePiece {
     double getBusyTime();
 
     /**
+     * Sets this game piece to be busy.
+     */
+    void setBusy();
+
+    /**
+     * Sets this game piece to be not busy.
+     */
+    void setFree();
+
+    /**
      * Sets how long this game piece will be busy for.
      * @param busyTime The amount of time this piece will be busy for.
      */
@@ -28,4 +38,5 @@ public interface GamePiece {
      * @return The type of game piece this is.
      */
     GamePieceType getGamePieceType();
+
 }

@@ -73,4 +73,14 @@ public abstract class Counter implements GamePiece{
 		this.busyTime = busyTime;
 	}
 
+	@Override
+	public void setBusy(){
+		this.busy = true;
+	}
+
+	@Override
+	public void setFree(){
+		this.busy = false;
+	}
+
 }
