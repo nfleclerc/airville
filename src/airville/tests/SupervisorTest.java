@@ -8,10 +8,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the Supervisor class.
  */
 public class SupervisorTest {
 
+    /**
+     * Tests the speedUp() routine in Supervisor.
+     * @throws Exception
+     */
     @Test
     public void testSpeedUp() throws Exception {
         Supervisor supervisor = new Supervisor();
@@ -21,6 +25,10 @@ public class SupervisorTest {
         assertTrue(1 == counter.getBusyTime());
     }
 
+    /**
+     * Tests the slowDown() routine in Supervisor.
+     * @throws Exception
+     */
     @Test
     public void testSlowDown() throws Exception {
         Supervisor supervisor = new Supervisor();

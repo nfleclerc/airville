@@ -14,15 +14,23 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the RegularCounter class.
  */
 public class RegularCounterTest {
 
+    /**
+     * Rests the points in Player.
+     */
     @Before
     public void resetPoints(){
         Player.getInstance().resetCurrencies();
     }
 
+    /**
+     * Tests the processPassengers() routine in RegularCounter in which none
+     * of the passengers are frequent flyers.
+     * @throws Exception
+     */
     @Test
     public void testProcessPassengers() throws Exception {
 
@@ -44,6 +52,11 @@ public class RegularCounterTest {
 
     }
 
+    /**
+     * Tests the processPassengers() routine in RegularCounter in which all
+     * of the passengers are frequent flyers.
+     * @throws Exception
+     */
     @Test
     public void testProcessFrequentFlyers() throws Exception {
 

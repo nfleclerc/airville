@@ -13,18 +13,24 @@ import java.util.Optional;
 import static org.junit.Assert.*;
 
 /**
- * Created by nathaniel on 11/28/15.
+ * Tests the Passenger class.
  */
 public class PassengerTest {
 
     Player player = Player.getInstance();
 
+    /**
+     * Resets the points in the Player class.
+     */
     @Before
     public void resetPoints(){
         player.resetCurrencies();
     }
 
-    //Structured Branch in which passenger is regular
+    /**
+     * Tests the processAt() routine in Passenger in which the Passenger is Regular.
+     * @throws Exception
+     */
     @Test
     public void testProcessAtRegular() throws Exception {
         int currentPoints = player.getPoints();
@@ -33,8 +39,10 @@ public class PassengerTest {
         assertTrue(currentPoints + PassengerType.REGULAR.getPoints() == player.getPoints());
     }
 
-    //Structured Branch in passenger has too many bags
-    @Test
+    /**
+     * Tests the processAt() routine in Passenger in which the Passenger has Extra Baggage.
+     * @throws Exception
+     */    @Test
     public void testProcessAtExtraBaggage() throws Exception {
         int currentPoints = player.getPoints();
         Passenger passenger = new Passenger(false, PassengerType.EXTRABAGGAGE);
@@ -42,8 +50,10 @@ public class PassengerTest {
         assertTrue(currentPoints + PassengerType.EXTRABAGGAGE.getPoints() == player.getPoints());
     }
 
-    //Structured Branch in which the plane is overbooked and the passenger
-    //is getting a refund
+    /**
+     * Tests the processAt() routine in Passenger in which the Passenger is Overbooked.
+     * @throws Exception
+     */
     @Test
     public void testProcessAtOverbooked() throws Exception {
         int currentPoints = player.getPoints();
@@ -52,8 +62,10 @@ public class PassengerTest {
         assertTrue(currentPoints + PassengerType.OVERBOOKED.getPoints() == player.getPoints());
     }
 
-    //Structured Branch in which the passenger is rerouted
-    //and needs help from a supervisor
+    /**
+     * Tests the processAt() routine in Passenger in which the Passenger is Rerouted.
+     * @throws Exception
+     */
     @Test
     public void testProcessAtRerouted() throws Exception {
         int currentPoints = player.getPoints();

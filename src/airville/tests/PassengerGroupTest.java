@@ -13,10 +13,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the PassengerGroup class.
  */
 public class PassengerGroupTest {
 
+    /**
+     * Test the queueAt() routine in PassengerGroup.
+     * @throws Exception
+     */
     @Test
     public void testQueueAt() throws Exception {
         List<Passenger> passengerList = new LinkedList<>();
@@ -30,6 +34,10 @@ public class PassengerGroupTest {
         assertTrue(4 == counter.getLine().peek().size());
     }
 
+    /**
+     * Test the isOfRegularPassengers() routine in PassengerGroup.
+     * @throws Exception
+     */
     @Test
     public void testIsOfRegularPassengers() throws Exception {
         List<Passenger> passengerList = new LinkedList<>();
@@ -50,6 +58,10 @@ public class PassengerGroupTest {
         assertTrue(group.isOfRegularPassengers());
     }
 
+    /**
+     * Tests the isOnePassenger() routine in PassengerGroup.
+     * @throws Exception
+     */
     @Test
     public void testIsOnePassenger() throws Exception {
 
@@ -67,6 +79,10 @@ public class PassengerGroupTest {
         assertFalse(group.isOnePassenger());
     }
 
+    /**
+     * Tests the processAt() routine in PassengerGroup.
+     * @throws Exception
+     */
     @Test
     public void testProcessAt() throws Exception {
 
@@ -82,6 +98,10 @@ public class PassengerGroupTest {
 
     }
 
+    /**
+     * Tests the isOfFrequentFlyers() routine in PassengerGroup.
+     * @throws Exception
+     */
     @Test
     public void testIsOfFrequentFlyers() throws Exception {
         List<Passenger> passengerList = new LinkedList<>();

@@ -2,9 +2,7 @@ package airville.tests;
 
 import airville.core.Airport;
 import airville.core.Player;
-import airville.core.Store;
 import airville.core.gamepieces.Agent;
-import airville.core.gamepieces.GamePieceType;
 import airville.core.gamepieces.Supervisor;
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.gamepieces.counters.Counter;
@@ -20,13 +18,18 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by nathaniel on 12/1/15.
+ * A stress test for the whole code base.
  */
 public class StressTest {
 
     private Airport airport = Airport.getInstance();
     private Player player = Player.getInstance();
 
+    /**
+     * Conducts the stress test on the whole code base. Queues 40000 groups to different counters.
+     * Makes sure the resulting number of points is the correct amount.
+     * @throws Exception
+     */
     @Test
     public void stressTest() throws Exception{
         initializeGame();
@@ -39,6 +42,11 @@ public class StressTest {
         assertAllAreNotBusy();
     }
 
+    /**
+     * Asserts that each game piece used is no longer busy and all queues
+     * are empty i.e. all passengers have been processed.
+     * @throws Exception
+     */
     private void assertAllAreNotBusy() throws Exception{
         for (Counter counter : airport.getAutomaticCounters()){
             assertFalse(counter.isBusy());
@@ -53,6 +61,10 @@ public class StressTest {
         }
     }
 
+    /**
+     * Queues four groups of passengers consisting of certain amounts of
+     * each type.
+     */
     private void queuePassengers(){
         List<Passenger> passengers = new LinkedList<>();
         for (int i = 0; i < 100; i++) {
@@ -73,8 +85,10 @@ public class StressTest {
         new PassengerGroup(passengers).queueAt(airport.getRandomRegularCounter());
     }
 
+    /**
+     * Populates the airport with each type of game piece.
+     */
     private void initializeGame(){
-
         for (int i = 0; i < player.getNumberOfAutoCounters(); i++) {
             airport.addItem(new AutomaticCounter());
         }

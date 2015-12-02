@@ -13,17 +13,24 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the Agent class.
  */
 public class AgentTest {
 
 
+    /**
+     * Clears all the lists in the Airport class.
+     */
     @Before
     public void clearLists(){
         Airport.getInstance().clearLists();
         Airport.getInstance().addItem(new Agent());
     }
 
+    /**
+     * Tests the callForAssistance() routine of Agent.
+     * @throws Exception
+     */
     @Test
     public void testCallForAssistanceAt() throws Exception {
         List<Passenger> passengers = new LinkedList<>();
@@ -31,6 +38,10 @@ public class AgentTest {
         assertTrue(Airport.getInstance().getAgents().isEmpty());
     }
 
+    /**
+     * Tests the leaveCounter() routine of Agent.
+     * @throws Exception
+     */
     @Test
     public void testLeaveCounter() throws Exception {
         //gets the first agent

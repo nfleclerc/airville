@@ -15,11 +15,19 @@ import static org.junit.Assert.*;
  */
 public class AirportTest {
 
+    /**
+     * Clear the lists of the Airport class.
+     */
     @Before
     public void clearLists(){
         Airport.getInstance().clearLists();
     }
 
+    /**
+     * Tests the addItem() routine of Airport. Tests adding an Automatic Counter,
+     * Regular Counter, Supervisor, and Agent
+     * @throws Exception
+     */
     @Test
     public void testAddItem() throws Exception {
 

@@ -9,17 +9,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the Player class.
  */
 public class PlayerTest {
 
 
+    /**
+     * Rests the points in the Player class.
+     */
     @Before
     @After
     public void resetCurrencies(){
         Player.getInstance().resetCurrencies();
     }
 
+    /**
+     * Tests adding points to the Player.
+     * @throws Exception
+     */
     @Test
     public void testAddPoints() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
@@ -27,6 +34,10 @@ public class PlayerTest {
         assertTrue(currentPoints + 17 == Player.getInstance().getPoints());
     }
 
+    /**
+     * Tests removing points from the Player.
+     * @throws Exception
+     */
     @Test
     public void testRemovePoints() throws Exception {
         int currentPoints = Player.getInstance().getPoints() + 50;
@@ -34,6 +45,10 @@ public class PlayerTest {
         assertTrue(currentPoints - 17 == Player.getInstance().getPoints() + 50);
     }
 
+    /**
+     * Tests removing diamonds from the Player.
+     * @throws Exception
+     */
     @Test
     public void testRemoveDiamonds() throws Exception {
         int currentDiamonds = Player.getInstance().getDiamonds() + 50;
@@ -41,6 +56,10 @@ public class PlayerTest {
         assertTrue(currentDiamonds - 19 == Player.getInstance().getDiamonds() + 50);
     }
 
+    /**
+     * Tests the increaseCountOf() routine in Player in which a RegularCounter is being added.
+     * @throws Exception
+     */
     @Test
     public void testAddRegularCounter() throws Exception {
         int currentRegCounters = Player.getInstance().getNumberOfRegularCounters();
@@ -49,6 +68,10 @@ public class PlayerTest {
                 Player.getInstance().getNumberOfRegularCounters());
     }
 
+    /**
+     * Tests the increaseCountOf() routine in Player in which an AutomaticCounter is being added.
+     * @throws Exception
+     */
     @Test
     public void testAddAutomaticCounter() throws Exception {
         int currentAutoCounters = Player.getInstance().getNumberOfAutoCounters();
@@ -57,6 +80,10 @@ public class PlayerTest {
                 Player.getInstance().getNumberOfAutoCounters());
     }
 
+    /**
+     * Tests the increaseCountOf() routine in Player in which an Agent is being added.
+     * @throws Exception
+     */
     @Test
     public void testAddAgent() throws Exception {
         int currentAgentCount = Player.getInstance().getNumberOfAgents();
@@ -65,6 +92,10 @@ public class PlayerTest {
                 Player.getInstance().getNumberOfAgents());
     }
 
+    /**
+     * Tests the increaseCountOf() routine in Player in which a Supervisor is being added.
+     * @throws Exception
+     */
     @Test
     public void testAddSupervisor() throws Exception {
         int currentSupervisorCount = Player.getInstance().getNumberOfSupervisors();
@@ -73,6 +104,10 @@ public class PlayerTest {
                 Player.getInstance().getNumberOfSupervisors());
     }
 
+    /**
+     * Tests the increaseCountOf() routine in Player in which a regular counter is being added.
+     * @throws Exception
+     */
     @Test
     public void testAddDiamond() throws Exception {
         int currentDiamonds = Player.getInstance().getDiamonds();
@@ -80,6 +115,9 @@ public class PlayerTest {
         assertTrue(currentDiamonds + 1 == Player.getInstance().getDiamonds());
     }
 
+    /**
+     * Tests the resetCurrencies() routine in Player.
+     */
     @Test
     public void testResetCurrencies(){
         Player.getInstance().resetCurrencies();

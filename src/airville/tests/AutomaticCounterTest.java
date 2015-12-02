@@ -15,16 +15,24 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the AutomaticCounter class.
  */
 public class AutomaticCounterTest {
 
 
+    /**
+     * Resets the points in the Player class.
+     */
     @Before
     public void resetPoints(){
         Player.getInstance().resetCurrencies();
     }
 
+    /**
+     * Tests the processPassenger() method with the case in which a passenger is
+     * by themself and Regular.
+     * @throws Exception
+     */
     @Test
     public void testProcessRegularPassengers() throws Exception {
 
@@ -46,6 +54,11 @@ public class AutomaticCounterTest {
 
     }
 
+    /**
+     * Tests the processPassenger() method with the case in which a passenger is
+     * by themself but is not Regular.
+     * @throws Exception
+     */
     @Test
     public void testProcessNonRegularPassengers() throws Exception {
         //Structured Branch:
@@ -69,6 +82,11 @@ public class AutomaticCounterTest {
 
     }
 
+    /**
+     * Tests the processPassenger() method with the case in which a passenger is not
+     * by themself and Regular.
+     * @throws Exception
+     */
     @Test
     public void testProcessPassengersInGroups(){
         //Structured Branch:
@@ -97,6 +115,11 @@ public class AutomaticCounterTest {
 
     }
 
+    /**
+     * Tests the processPassenger() method with the case in which a passenger is not
+     * by themself and one in the group is not Regular.
+     * @throws Exception
+     */
     @Test
     public void testProcessPassengersInGroupsWithASpecialPassenger(){
         //Structured Branch:

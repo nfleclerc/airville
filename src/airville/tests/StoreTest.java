@@ -9,10 +9,13 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertTrue;
 
 /**
- * Created by Nathaniel on 11/19/2015.
+ * Tests the Store class.
  */
 public class StoreTest {
 
+    /**
+     * Adds money to the Player class that can be used for testing purposes.
+     */
     @Before
     public void addMoneyForTesting(){
         Player.getInstance().resetCurrencies();
@@ -20,7 +23,11 @@ public class StoreTest {
         Player.getInstance().addDiamond();
     }
 
-    //Structured Branch in which an Automatic Counter is bought
+    /**
+     * Tests the buyItem() routine in Store in which an AutomaticCounter is being
+     * purchased.
+     * @throws Exception
+     */
     @Test
     public void testBuyAutomaticCounter() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
@@ -32,8 +39,11 @@ public class StoreTest {
         assertTrue(airportCount + 1 == Airport.getInstance().getAutomaticCounters().size());
     }
 
-    //Structured Branch in which a Regular Counter is bought
-    @Test
+    /**
+     * Tests the buyItem() routine in Store in which a RegularCounter is being
+     * purchased.
+     * @throws Exception
+     */    @Test
     public void testBuyRegularCounter() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
         int playerCount = Player.getInstance().getNumberOfRegularCounters();
@@ -44,8 +54,11 @@ public class StoreTest {
         assertTrue(airportCount + 1 == Airport.getInstance().getRegularCounters().size());
     }
 
-    //Structured Branch in which an Agent is bought
-    @Test
+    /**
+     * Tests the buyItem() routine in Store in which an Agent is being
+     * purchased.
+     * @throws Exception
+     */    @Test
     public void testBuyAgent() throws Exception {
         int currentPoints = Player.getInstance().getPoints();
         int playerCount = Player.getInstance().getNumberOfAgents();
@@ -56,8 +69,11 @@ public class StoreTest {
         assertTrue(airportCount + 1 == Airport.getInstance().getAgents().size());
     }
 
-    //Structured Branch in which a Supervisor is bought
-    @Test
+    /**
+     * Tests the buyItem() routine in Store in which a Supervisor is being
+     * purchased.
+     * @throws Exception
+     */    @Test
     public void testBuySupervisor() throws Exception {
         int diamonds = Player.getInstance().getDiamonds();
         int playerCount = Player.getInstance().getNumberOfSupervisors();
