@@ -1,7 +1,6 @@
 package airville.core.gamepieces;
 
 import airville.core.Player;
-import airville.core.Store;
 import airville.core.gamepieces.counters.AutomaticCounter;
 import airville.core.gamepieces.counters.RegularCounter;
 
@@ -9,7 +8,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
- * An Enum representing a game peice that can be purchased. These are either an Agent, Supervisor,
+ * An Enum representing a game piece that can be purchased. These are either an Agent, Supervisor,
  * Automatic Counter, and Regular Counter.
  */
 public enum GamePieceType {

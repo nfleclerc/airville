@@ -59,7 +59,7 @@ public class RegularCounter extends Counter {
 		}
 		//add the remaining passengers into the line. all the frequent flyers
 		//will be at the front of the line
-		getLine().stream().forEach(passengerGroup -> adjustedLine.add(passengerGroup));
+		getLine().stream().forEach(adjustedLine::add);
 		//remove the passengers from the original line and return the new queue
 		getLine().clear();
 		return adjustedLine;

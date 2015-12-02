@@ -1,7 +1,6 @@
 package airville.core.passengers;
 
 import airville.core.gamepieces.counters.Counter;
-import com.sun.istack.internal.NotNull;
 
 import java.util.List;
 

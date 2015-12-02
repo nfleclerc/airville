@@ -43,7 +43,7 @@ public class Player {
 
 	/**
 	 * Returns an instance of the Player.
-	 * @return
+	 * @return an instance of the Player
 	 */
 	public static Player getInstance(){
 		return instance;
@@ -150,7 +150,7 @@ public class Player {
 
 	/**
 	 * Returns the number of Regular Counters the Player has.
-	 * @return The number of Regular Counters the Player has.
+	 * @return  The number of Regular Counters the Player has.
 	 */
 	public int getNumberOfRegularCounters() {
 		return numberOfRegularCounters;

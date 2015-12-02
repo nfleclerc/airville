@@ -22,7 +22,7 @@ public class Agent implements GamePiece {
 	public static Agent callForAssistance(PassengerGroup passengerGroupToHelp){
 		//returns an agent and removes it from the pool of agents just floating around
 		Agent agent =
-				//just grabs a random agent thats floating around
+				//just grabs a random agent that's floating around
 				Airport.getInstance().getAgents().get((int) (Math.random() *
 						Airport.getInstance().getAgents().size()));
 

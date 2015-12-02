@@ -44,7 +44,7 @@ public class Passenger {
      * point value to the Player's point value. Rerouted Passengers are processed slightly different
      * than other Passengers. They require a Supervisor to be at the Counter they are being
      * processed at.
-     * @param counter
+     * @param counter The Counter at which this Passenger will be processed.
      */
     public void processAt(Counter counter){
         //add this passengers busy time to the counter

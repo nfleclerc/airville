@@ -23,7 +23,7 @@ public class AutomaticCounter extends Counter {
 	}
 
 	/**
-	 * Process all the Passenegers in its line. Randomly decides if a passenger group needs help
+	 * Process all the Passengers in its line. Randomly decides if a passenger group needs help
 	 * from an agent. If it does it calls a free agent over. If the passenger group does not only contain
 	 * Regular Passengers is removes them from the line and queues them at a regular counter.
 	 */

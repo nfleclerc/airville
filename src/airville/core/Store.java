@@ -22,13 +22,6 @@ public class Store {
     }
 
     /**
-     * An Enum describing the type of currency to buy game pieces with.
-     */
-    public enum CurrencyType {
-        DIAMONDS, POINTS
-    }
-
-    /**
      * Buys a diamond from the Store. This is done with real money.
      */
     public void buyDiamond(){
@@ -46,22 +39,6 @@ public class Store {
         //add this item to the player's count of it
         Player.getInstance().increaseCountOf(gamePieceType);
         gamePieceType.buy();
-    }
-
-    /**
-     * Removes an amount of currency from the Player.
-     * @param currencyType The type of currency to remove from the Player. Can be diamonds or points.
-     * @param cost The amount of currency to remove from the player.
-     */
-    private void removeCurrency(CurrencyType currencyType, int cost){
-        switch (currencyType){
-            case DIAMONDS:
-                Player.getInstance().removeDiamonds(cost);
-                break;
-            case POINTS:
-                Player.getInstance().removePoints(cost);
-        }
-
     }
 
 }

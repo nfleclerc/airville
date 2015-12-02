@@ -52,7 +52,7 @@ public abstract class Counter implements GamePiece{
 
 	/**
 	 * Returns true if this Counter has a Supervisor, false otherwise.
-	 * @return Whether or not this Counter has a SUpervisor.
+	 * @return Whether or not this Counter has a Supervisor.
 	 */
 	public boolean hasSupervisor() {
 		return supervisor.isPresent();

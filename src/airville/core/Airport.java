@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The Airport. This class is a singleton and holds information on all the game peices currently in the game.
+ * The Airport. This class is a singleton and holds information on all the game pieces currently in the game.
  */
 public class Airport {
 
@@ -19,9 +19,6 @@ public class Airport {
 	private List<AutomaticCounter> automaticCounters = new ArrayList<>();
 	private List<Agent> agents = new ArrayList<>();
 	private List<Supervisor> supervisors = new ArrayList<>();
-
-	private static final Player player = Player.getInstance();
-	private static final Store store = Store.getInstance();
 
 	private static final Airport instance = new Airport();
 
